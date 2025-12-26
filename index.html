@@ -7,7 +7,7 @@
     <!-- Security: Content Security Policy -->
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:;">
-    <title>International Software House | Enterprise Solutions - cortellect</title>
+    <title>International Software House | Enterprise Solutions - Cortellect</title>
     <meta name="description"
         content="Leading software house serving UK, USA & Pakistan businesses. We build enterprise software, AI solutions, and high-performance web apps. 200+ projects delivered.">
     <link rel="canonical" href="https://uziii-stack.github.io/cortellectweb-final/">
@@ -28,8 +28,24 @@
     </noscript>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
 
         * {
             margin: 0;
@@ -42,13 +58,25 @@
         body {
             margin: 0;
             padding: 0;
-            max-width: 100vw;
-            position: relative;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         .page-content-wrapper {
-            overflow-x: hidden;
+            overflow: visible !important;
+            /* Disable wrapper scroll */
             width: 100%;
+            height: auto !important;
+        }
+
+        /* Prevent sections from becoming scroll traps */
+        section {
+            overflow: visible !important;
+            height: auto !important;
         }
 
         .cortellect-top-bar {
@@ -566,7 +594,8 @@
         .hero-gradient {
             background: #001F3F;
             position: relative;
-            overflow: hidden;
+            overflow: visible !important;
+            height: auto !important;
         }
 
         .hero-gradient::before {
@@ -755,6 +784,10 @@
             }
         }
 
+        footer .grid {
+            gap: 2.5rem !important;
+        }
+
         @media (max-width:640px) {
             section {
                 padding-top: 3rem !important;
@@ -770,10 +803,6 @@
             .text-5xl,
             .text-6xl {
                 font-size: 2.5rem !important;
-            }
-
-            footer .grid {
-                gap: 2.5rem !important;
             }
 
             input,
@@ -834,6 +863,7 @@
         @media (min-width:1281px) and (max-width:1535px) {
             .container {
                 max-width: 1280px;
+
             }
         }
 
@@ -1928,6 +1958,81 @@
                 font-size: 28px;
             }
         }
+
+        /* =====  Frequently Asked Questions (gxacc) ===== */
+
+        .gxacc-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .gxacc-arrow.gxacc-open {
+            transform: rotate(180deg);
+        }
+
+        .gxacc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.3s ease;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .gxacc-content.gxacc-open {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* FAQ RESPONSIVENESS FIXES (Mobile) */
+        @media (max-width: 640px) {
+            .gxacc-wrapper {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            .gxacc-btn {
+                padding: 0.75rem 1rem !important;
+            }
+
+            .gxacc-title {
+                font-size: 1rem !important;
+                line-height: 1.4 !important;
+                flex: 1;
+                padding-right: 0.75rem;
+                text-align: left;
+            }
+
+            .gxacc-arrow {
+                font-size: 1rem !important;
+                flex-shrink: 0;
+            }
+
+            .gxacc-content {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .gxacc-content p {
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+            }
+
+            .gxacc-content.gxacc-open {
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .gxacc-title {
+                font-size: 0.9rem !important;
+            }
+
+            .gxacc-btn {
+                padding: 0.6rem 0.75rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -1956,9 +2061,9 @@
                         Open for New Projects
                     </span>
                     <div class="nav-top-social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -2033,7 +2138,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="nav-mobile-toggle" id="navMobileToggle">
+                    <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle mobile menu">
                         <i class="fas fa-bars" id="navMobileIcon"></i>
                     </button>
                 </div>
@@ -2086,1051 +2191,1072 @@
 
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient pt-16 pb-20 lg:pt-20 sm:pb-32 lg:pb-40 relative">
-        <div class="container mx-auto px-4 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
-                        <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
-                            <i class="fas fa-shield-alt text-blue-600"></i>
-                            <span class="text-sm font-semibold text-gray-800">99% Satisfaction</span>
-                        </div>
-                        <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
-                            <i class="fas fa-clock text-blue-600"></i>
-                            <span class="text-sm font-semibold text-gray-800">3+ Years</span>
-                        </div>
-                        <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
-                            <i class="fas fa-globe text-blue-600"></i>
-                            <span class="text-sm font-semibold text-gray-800">Global Clients</span>
-                        </div>
-                    </div>
-
-                    <h1
-                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
-                        International Software House Delivering Enterprise Solutions Worldwide
-                    </h1>
-                    <p class="text-gray-300 text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 leading-relaxed">
-                        We build enterprise-grade software, AI-powered solutions, and high-performance web applications
-                        for global businesses. Scalable, secure, and future-ready digital products delivered with
-                        precision.
-                    </p>
-
-
-                    <div class="flex flex-col items-center  sm:flex-row gap-4">
-                        <a href="./contact.html"
-                            class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
-                            style="background-color: #4169E1;">
-                            <i class="fa-solid fa-rocket mr-2"></i> Start Your Project
-                        </a>
-                        <button
-                            class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-gray-800 transition backdrop-blur-sm text-lg">
-                            <i class="fas fa-phone-alt mr-2"></i> Schedule Call
-                        </button>
-                    </div>
-                </div>
-
-                <div class="hidden lg:block relative">
-                    <div class="floating">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=500&fit=crop"
-                            alt="Software Development" class="rounded-2xl shadow-2xl">
-                    </div>
-
-                    <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl p-6 badge-float">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-green-100 rounded-full p-4">
-                                <i class="fas fa-check-circle text-green-600 text-3xl"></i>
-                            </div>
-                            <div>
-                                <div class="text-2xl font-bold text-gray-800">Enterprise</div>
-                                <div class="text-gray-600 font-semibold">Solutions</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Tech Stack Section -->
-    <section class="tech-stack-section py-12">
-        <h2>Powered By <span class="text-blue-600">Modern Technologies</span></h2>
-
-        <div class="filter-buttons">
-            <button onclick="showCategory('frontend', this)">Frontend</button>
-            <button onclick="showCategory('backend', this)">Backend</button>
-            <button onclick="showCategory('database', this)">Databases</button>
-            <button onclick="showCategory('cms', this)">CMS Development</button>
-        </div>
-
-        <div class="logo-container" id="logos">
-
-            <!-- Frontend -->
-            <div class="logo frontend" data-name="React"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
-                    loading="lazy" />
-            </div>
-            <div class="logo frontend" data-name="HTML5"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
-                    loading="lazy" />
-            </div>
-            <div class="logo frontend" data-name="CSS3"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
-                    loading="lazy" /></div>
-            <div class="logo frontend" data-name="JavaScript"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    alt="JavaScript" loading="lazy" />
-            </div>
-            <div class="logo frontend" data-name="Next.js"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" alt="NextJS"
-                    loading="lazy" />
-            </div>
-
-            <!-- Backend -->
-            <div class="logo backend" data-name="Java"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
-                    loading="lazy" /></div>
-            <div class="logo backend" data-name="Python"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-                    loading="lazy" />
-            </div>
-            <div class="logo backend" data-name="Node.js"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"
-                    loading="lazy" />
-            </div>
-            <div class="logo backend" data-name="PHP"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
-                    loading="lazy" /></div>
-            <div class="logo backend" data-name="C"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" loading="lazy" />
-            </div>
-            <div class="logo backend" data-name="C++"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"
-                    loading="lazy" />
-            </div>
-
-            <!-- Database -->
-            <div class="logo database" data-name="MySQL"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
-                    loading="lazy" />
-            </div>
-            <div class="logo database" data-name="SQLite"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"
-                    loading="lazy" />
-            </div>
-            <div class="logo database" data-name="Firebase"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"
-                    loading="lazy" />
-            </div>
-            <div class="logo database" data-name="Django"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"
-                    loading="lazy" />
-            </div>
-
-            <!-- CMS -->
-            <div class="logo cms" data-name="WordPress"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-                    alt="WordPress" loading="lazy" />
-            </div>
-            <div class="logo cms" data-name="Magento"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/magento/magento-original.svg" alt="Magento"
-                    loading="lazy" />
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
-                    OUR SERVICES
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Enterprise Software Solutions</h2>
-                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-                    Comprehensive development services backed by modern tech stack and proven delivery excellence
-                </p>
-            </div>
-
-            <div class="services-grid">
-
-                <!-- LEFT COLUMN (ICON RIGHT) -->
-                <div class="service-box service-icon-right">
-                    <img src="assets/icons/crm.webp" alt="Enterprise CRM development solutions icon" width="70"
-                        height="70">
+    <main class="page-content-wrapper">
+        <section id="home" class="hero-gradient pt-16 pb-20 lg:pt-20 sm:pb-32 lg:pb-40 relative">
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div class="service-title">Enterprise CRM Development</div>
-                        <div class="service-text">Say goodbye to generic software! Our Enterprise CRM solutions are
-                            tailored to your business needs, blending AI-driven insights with expert manual
-                            customization to boost efficiency, customer engagement, and revenue growth.</div>
-
-                        <a href="./services/enterprise-crm-development.html"
-                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
-                            Explore CRM Solutions →
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="service-box service-icon-left">
-                    <img src="assets/icons/emss.webp" alt="Enterprise Management System software development icon"
-                        width="70" height="70">
-                    <div>
-                        <div class="service-title">Enterprise EMS</div>
-                        <div class="service-text">Streamline your organization with our Enterprise Management Systems.
-                            Optimize workflows, enhance collaboration, and track performance effortlessly across
-                            departments.</div>
-
-                        <a href="./services/erp-enterprise.html"
-                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
-                            Discover EMS Features →
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="service-box service-icon-right">
-                    <img src="assets/icons/webapp.webp" alt="Custom web application development service icon" width="70"
-                        height="70">
-                    <div>
-                        <div class="service-title">Custom Web Applications</div>
-                        <div class="service-text"> Transform your ideas into high-performance web applications. We craft
-                            scalable, secure, and user-friendly solutions that perfectly fit your business requirements.
-                        </div>
-
-                        <a href="./services/custom-web-application.html"
-                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
-                            Build Your Web App →
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="service-box service-icon-left">
-                    <img src="./assets/icons/AI.webp" alt="AI integration and automation solutions icon" width="70"
-                        height="70" loading="lazy" decoding="async">
-                    <div>
-                        <div class="service-title">AI Integration & Automation</div>
-                        <div class="service-text">Leverage the power of AI to automate processes, reduce errors, and
-                            make smarter, data-driven decisions. From predictive analytics to intelligent workflows, we
-                            bring automation to the next level.</div>
-
-                        <a href="./services/ai-integration-automation.html"
-                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
-                            Automate your business workflow →
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="service-box service-icon-right">
-                    <img src="assets/icons/mobileapp.webp" alt="Mobile application development services icon" width="70"
-                        height="70" loading="lazy" decoding="async">
-                    <div>
-                        <div class="service-title">Mobile App Development</div>
-                        <div class="service-text">Create fast, secure, and intuitive mobile apps for Android and iOS
-                            that engage users and drive business growth. We turn your mobile vision into reality.
-                        </div>
-
-                        <a href="./services/mobile-app-development.html"
-                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
-                            Hire mobile app developers →
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="service-box service-icon-left">
-                    <img src="assets/icons/wordpress.webp" alt="" width="70" height="70" loading="lazy"
-                        decoding="async">
-                    <div>
-                        <div class="service-title">WordPress Websites</div>
-                        <div class="service-text">Bring your brand online with a dynamic, responsive, and
-                            fully-customizable WordPress website. Perfect for businesses looking to impress and convert
-                            visitors effortlessly.
-                        </div>
-
-                        <a href="./services/wordpress-websites.html"
-                            class="inline-block mt-2 text-[#2980b9] text-[14px] font-bold hover:underline cursor-pointer">
-                            Go Live with WordPress →
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Industries Section -->
-    <section class="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center mb-16 lg:mb-20">
-                <div
-                    class="inline-flex items-center bg-blue-100 text-blue-600 px-6 py-2.5 rounded-full font-bold mb-6 shadow-sm">
-                    <i class="fas fa-industry mr-2 text-sm"></i>
-                    INDUSTRIES WE SERVE
-                </div>
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-                    Empowering <span class="text-blue-600">Diverse Sectors</span>
-                </h2>
-                <p class="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-                    Delivering tailored digital solutions across multiple industries with proven expertise and
-                    cutting-edge technology
-                </p>
-            </div>
-
-            <!-- Industries Grid -->
-
-            <div class="industries-grid">
-
-                <a class="industry-card" href="./industries.html">
-
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-yellow"><i class="fas fa-home"></i></div>
-                    <div class="industry-card-title">Real estate
-
-
-                    </div>
-
-
-                </a>
-
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-green"><i class="fas fa-tools"></i></div>
-                    <div class="industry-card-title">
-                        Engineering and construction
-                    </div>
-
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-pink"><i class="fas fa-cart-shopping"></i></div>
-                    <div class="industry-card-title">Retail</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-blue"><i class="fas fa-industry"></i></div>
-                    <div class="industry-card-title">Manufacturing</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-mint"><i class="fas fa-truck"></i></div>
-                    <div class="industry-card-title">Logistics and Transportation</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-red"><i class="fas fa-oil-can"></i></div>
-                    <div class="industry-card-title">Oil and Gas</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-yellow"><i class="fas fa-recycle"></i></div>
-                    <div class="industry-card-title">Energy and utilities</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-blue"><i class="fas fa-briefcase"></i></div>
-                    <div class="industry-card-title">Professional services</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-green"><i class="fas fa-wifi"></i></div>
-                    <div class="industry-card-title">Telecoms</div>
-                </a>
-
-                <a class="industry-card" href="./industries.html">
-                    <div class="industry-arrow">↗</div>
-                    <div class="industry-icon icon-light-yellow"><i class="fas fa-plane"></i></div>
-                    <div class="industry-card-title">Travel and hospitality</div>
-                </a>
-
-            </div>
-
-            <div class="text-center mt-12">
-                <p class="text-gray-600 text-lg mb-6">Don't see your industry? We adapt our solutions to any sector.
-                </p>
-                <a href="./contact.html"
-                    class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
-                    style="background-color: #4169E1;">
-                    <i class="fas fa-comments mr-2"></i>Discuss Your Industry Needs
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Portfolio -->
-    <section id="projects" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
-                    PORTFOLIO
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Featured Projects</h2>
-                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-                    Showcasing our expertise through successfully delivered enterprise solutions
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
-                    <img src="assets/images/projects/crm-section.webp" alt="CRM System" class="w-full h-96 object-cover"
-                        width="823" height="433" loading="lazy" decoding="async">
-                    <div
-                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                        <div
-                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span
-                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">Enterprise</span>
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                        <div class="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
+                            <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
+                                <i class="fas fa-shield-alt text-blue-600"></i>
+                                <span class="text-sm font-semibold text-gray-800">99% Satisfaction</span>
                             </div>
-                            <h3 class="text-white text-3xl font-bold mb-2">Enterprise CRM System</h3>
-                            <p class="text-gray-200 mb-4">Lead management, B2B meetings, analytics dashboard.</p>
-                            <span class="text-blue-400 font-bold">React.js, Node.js, PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
-                    <img src="assets/images/projects/image-464.26x384.webp" alt="WordPress Site"
-                        class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
-                    <div
-                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                        <div
-                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span
-                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">WordPress</span>
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
+                            <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
+                                <i class="fas fa-clock text-blue-600"></i>
+                                <span class="text-sm font-semibold text-gray-800">3+ Years</span>
                             </div>
-                            <h3 class="text-white text-3xl font-bold mb-2">Corporate WordPress Website</h3>
-                            <p class="text-gray-200 mb-4">SEO-ready business site with Elementor Pro.</p>
-                            <span class="text-blue-400 font-bold">WordPress, PHP, MySQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
-                    <img src="assets/images/projects/Ai-chatbot-sys.webp"
-                        alt="AI-powered chatbot system project built by cortellect software house"
-                        class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
-                    <div
-                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                        <div
-                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span
-                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">AI/ML</span>
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
-                            </div>
-                            <h3 class="text-white text-3xl font-bold mb-2">AI Q/A Chatbot System</h3>
-                            <p class="text-gray-200 mb-4">Desktop chatbot using AI integration and NLP.</p>
-                            <span class="text-blue-400 font-bold">Python, OpenRouter, Tkinter</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
-                    <img src="assets/images/projects/EMS-section.webp" alt="EMS" class="w-full h-96 object-cover"
-                        width="823" height="433" loading="lazy" decoding="async">
-                    <div
-                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                        <div
-                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span
-                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">Enterprise</span>
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
-                            </div>
-                            <h3 class="text-white text-3xl font-bold mb-2">Employee Management System</h3>
-                            <p class="text-gray-200 mb-4">Attendance, HR tools, performance analytics.</p>
-                            <span class="text-blue-400 font-bold">React.js, Node.js, PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
-                    <img src="assets/images/projects/hotelbook.webp" alt="Hotel Booking"
-                        class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
-                    <div
-                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                        <div
-                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">Web
-                                    App</span>
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
-                            </div>
-                            <h3 class="text-white text-3xl font-bold mb-2">Hotel Booking Platform</h3>
-                            <p class="text-gray-200 mb-4">Room management, calendar booking, payments.</p>
-                            <span class="text-blue-400 font-bold">React.js, Express.js, MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
-                    <img src="assets/images/projects/e-commerce.webp" alt="E-Commerce" class="w-full h-96 object-cover"
-                        width="823" height="433" loading="lazy" decoding="async">
-                    <div
-                        class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                        <div
-                            class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span
-                                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">E-Commerce</span>
-                                <span
-                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Completed</span>
-                            </div>
-                            <h3 class="text-white text-3xl font-bold mb-2">E-Commerce Web Application</h3>
-                            <p class="text-gray-200 mb-4">Product catalog, cart, secure checkout.</p>
-                            <span class="text-blue-400 font-bold">React.js, Node.js, PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <button
-                    class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
-                    style="background-color: #4169E1;">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="bg-white py-12 relative z-20 stats-custom-margin">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="bg-blue-600 rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10" style="background-color: #001F3F;">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-
-                    <!-- Counter 1 -->
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2 counter" data-target="50">0+</div>
-                        <div class="text-white font-bold text-lg mb-1">Projects Delivered</div>
-                        <div class="text-blue-100 text-sm">Successfully Completed</div>
-                    </div>
-
-                    <!-- Counter 2 -->
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2 counter" data-target="40">0+</div>
-                        <div class="text-white font-bold text-lg mb-1">Happy Clients</div>
-                        <div class="text-blue-100 text-sm">Worldwide</div>
-                    </div>
-
-                    <!-- Counter 3 -->
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2 counter" data-target="99">0%</div>
-                        <div class="text-white font-bold text-lg mb-1">Satisfaction Rate</div>
-                        <div class="text-blue-100 text-sm">Client Reviews</div>
-                    </div>
-
-                    <!-- Static (no counter) -->
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">3+</div>
-                        <div class="text-white font-bold text-lg mb-1">Years Experience</div>
-                        <div class="text-blue-100 text-sm">Industry Expertise</div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-24 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="wcu-container-wrapper">
-
-                <!-- pill -->
-                <div class="wcu-pill">WHY CHOOSE US</div>
-
-                <!-- Heading -->
-                <div class="wcu-hero">
-                    <h1>Why <span class="wcu-brand">cortellect</span> is The Right Choice for You</h1>
-                </div>
-
-                <!-- main grid -->
-                <div class="wcu-grid">
-
-                    <!-- LEFT COLUMN -->
-                    <div class="wcu-left-col">
-
-                        <!-- Top-left feature -->
-                        <div class="wcu-feature-card" aria-labelledby="f1-title">
-                            <div class="wcu-icon-wrap" aria-hidden="true">
-                                <!-- icon: user group with stars -->
-                                <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true">
-                                    <circle cx="12" cy="9" r="3" />
-                                    <path d="M4 20c0-3 4-5 8-5s8 2 8 5" />
-                                    <circle cx="6" cy="7" r="1" />
-                                    <circle cx="18" cy="7" r="1" />
-                                </svg>
-                            </div>
-
-                            <div class="wcu-feature-content">
-                                <h3 id="f1-title">Expert Developers</h3>
-                                <p>Work with top industry professionals who bring years of real-world experience,
-                                    providing you with cutting-edge solutions, modern tools, and best practices to
-                                    ensure your project's success.</p>
+                            <div class="trust-badge rounded-full px-4 py-2 flex items-center space-x-2">
+                                <i class="fas fa-globe text-blue-600"></i>
+                                <span class="text-sm font-semibold text-gray-800">Global Clients</span>
                             </div>
                         </div>
 
-                        <!-- Top-right feature -->
-                        <div class="wcu-feature-card" aria-labelledby="f2-title">
-                            <div class="wcu-icon-wrap" aria-hidden="true">
-                                <!-- icon: rocket -->
-                                <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true">
-                                    <path d="M14 4s-1 1-3 3c-2 2-3 4-3 4s1 1 3 1 4-1 4-1 0-2-1-4 0-3 0-3z" />
-                                    <path d="M7 17c-1 1-4 2-4 2s1-3 2-4" />
-                                </svg>
-                            </div>
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-4 sm:mb-6 leading-tight">
+                            International Software House Delivering Enterprise Solutions Worldwide
+                        </h1>
+                        <p class="text-gray-300 text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 leading-relaxed">
+                            We build enterprise-grade software, AI-powered solutions, and high-performance web
+                            applications
+                            for global businesses. Scalable, secure, and future-ready digital products delivered with
+                            precision.
+                        </p>
 
-                            <div class="wcu-feature-content">
-                                <h3 id="f2-title">Business-Ready Solutions</h3>
-                                <p>Get enterprise-grade software that's production-ready, scalable, and built to
-                                    industry standards, helping you accelerate your business growth and stay
-                                    competitive in the market.</p>
-                            </div>
-                        </div>
 
-                        <!-- Large card spanning below -->
-                        <div class="wcu-feature-large" aria-labelledby="f3-title">
-                            <div class="wcu-icon-wrap" aria-hidden="true" style="align-self:flex-start;">
-                                <!-- icon: target / bullseye -->
-                                <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true">
-                                    <circle cx="12" cy="12" r="3" />
-                                    <circle cx="12" cy="12" r="6" />
-                                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="wcu-feature-content">
-                                <h3 id="f3-title">50+ Enterprise Projects Delivered</h3>
-                                <p>cortellect has delivered over 50 successful projects across various industries
-                                    including
-                                    CRM systems, e-commerce platforms, AI chatbots, and custom web applications. Our
-                                    proven track record demonstrates our commitment to quality, innovation, and client
-                                    satisfaction.</p>
-                            </div>
-                        </div>
-
-                    </div> <!-- END left-col -->
-
-                    <!-- RIGHT COLUMN: promo -->
-                    <aside class="wcu-promo" aria-labelledby="promo-title">
-                        <div>
-                            <div class="wcu-promo-icon" aria-hidden="true">
-                                <!-- promo icon: document outline -->
-                                <svg class="wcu-icon-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true">
-                                    <rect x="5" y="4" width="12" height="16" rx="2" ry="2" />
-                                    <path d="M9 8h6" stroke-linecap="round" />
-                                    <path d="M9 12h6" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <h3 id="promo-title">24/7 Support & Fast Response</h3>
-                            <p>At cortellect, we understand the importance of timely support for your business.
-                                That's why we offer 24-hour response time and dedicated support to keep your projects
-                                running smoothly.<br><br>Whether you need urgent fixes or ongoing maintenance, our team
-                                is always ready to assist you.</p>
-                        </div>
-
-                        <div>
-                            <a class="wcu-cta" href="./contact.html" aria-label="Start Your Project">
-                                Start Your Project
-                                <!-- arrow -->
-                                <svg width="14" height="14" viewBox="0 0 24 24"
-                                    style="display:inline-block; vertical-align:middle;">
-                                    <path d="M5 12h14M13 6l6 6-6 6" stroke="#00311f" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                </svg>
+                        <div class="flex flex-col items-center  sm:flex-row gap-4">
+                            <a href="./contact.html"
+                                class="bg-blue-600 text-white px-8 py-4 rounded-xl font-black hover:shadow-2xl transform hover:scale-105 transition text-lg align-items-center"
+                                style="background-color: #4169E1;">
+                                <i class="fa-solid fa-rocket mr-2"></i> Start Your Project
                             </a>
-                        </div>
-                    </aside>
-
-                </div> <!-- END grid -->
-
-            </div> <!-- END wcu-container-wrapper -->
-        </div> <!-- END container -->
-    </section>
-
-
-
-
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-24 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
-                    CLIENT REVIEWS
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">What Our Clients Say</h2>
-                <div class="flex justify-center items-center space-x-2 mb-4">
-                    <div class="flex text-yellow-400 text-2xl">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span class="text-gray-700 font-bold text-xl">5.0 out of 5</span>
-                    <span class="text-gray-500">(40+ reviews)</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <div class="testimonial-card rounded-2xl shadow-lg p-8">
-                    <div class="flex text-yellow-400 text-xl mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
-                        "cortellect delivered a world-class CRM & EMS system with dashboards, B2B meetings, and
-                        analytics."
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl"
-                            style="background-color: #4169E1;">
-                            BE
-                        </div>
-                        <div>
-                            <div class="font-bold text-gray-800 text-lg">Badar Expo</div>
-                            <div class="text-gray-600">Enterprise Client</div>
+                            <button
+                                class="border-2 border-white text-white px-8 py-4 rounded-xl font-black hover:bg-white hover:text-gray-800 transition backdrop-blur-sm text-lg">
+                                <i class="fas fa-phone-alt mr-2"></i> Schedule Call
+                            </button>
                         </div>
                     </div>
-                </div>
 
-                <div class="testimonial-card rounded-2xl shadow-lg p-8">
-                    <div class="flex text-yellow-400 text-xl mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
-                        "Our WordPress website now performs significantly better with cortellect's SEO & mobile-first
-                        design."
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl"
-                            style="background-color: #4169E1;">
-                            DM
+                    <div class="hidden lg:block relative">
+                        <div class="floating">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=500&fit=crop"
+                                alt="Software Development" class="rounded-2xl shadow-2xl">
                         </div>
-                        <div>
-                            <div class="font-bold text-gray-800 text-lg">Digital Marketing Agency</div>
-                            <div class="text-gray-600">Marketing Firm</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card rounded-2xl shadow-lg p-8">
-                    <div class="flex text-yellow-400 text-xl mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
-                        "Outstanding AI chatbot implementation! The Q/A system transformed our customer support
-                        operations."
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl"
-                            style="background-color: #4169E1;">
-                            TS
-                        </div>
-                        <div>
-                            <div class="font-bold text-gray-800 text-lg">Tech Startup</div>
-                            <div class="text-gray-600">SaaS Company</div>
+                        <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl p-6 badge-float">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-green-100 rounded-full p-4">
+                                    <i class="fas fa-check-circle text-green-600 text-3xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-gray-800">Enterprise</div>
+                                    <div class="text-gray-600 font-semibold">Solutions</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- BLOG SECTION START -->
-    <section class="blog-section">
-        <div class="blog-container">
-            <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
-                Our Blogs
+        </section>
+
+
+
+        <!-- Tech Stack Section -->
+        <section class="tech-stack-section py-12">
+            <h2>Powered By <span class="text-blue-600">Modern Technologies</span></h2>
+
+            <div class="filter-buttons">
+                <button onclick="showCategory('frontend', this)">Frontend</button>
+                <button onclick="showCategory('backend', this)">Backend</button>
+                <button onclick="showCategory('database', this)">Databases</button>
+                <button onclick="showCategory('cms', this)">CMS Development</button>
+            </div>
+
+            <div class="logo-container" id="logos">
+
+                <!-- Frontend -->
+                <div class="logo frontend" data-name="React"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
+                        loading="lazy" />
+                </div>
+                <div class="logo frontend" data-name="HTML5"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+                        loading="lazy" />
+                </div>
+                <div class="logo frontend" data-name="CSS3"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                        loading="lazy" /></div>
+                <div class="logo frontend" data-name="JavaScript"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript" loading="lazy" />
+                </div>
+                <div class="logo frontend" data-name="Next.js"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" alt="NextJS"
+                        loading="lazy" />
+                </div>
+
+                <!-- Backend -->
+                <div class="logo backend" data-name="Java"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                        loading="lazy" /></div>
+                <div class="logo backend" data-name="Python"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+                        loading="lazy" />
+                </div>
+                <div class="logo backend" data-name="Node.js"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        alt="Node.js" loading="lazy" />
+                </div>
+                <div class="logo backend" data-name="PHP"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
+                        loading="lazy" /></div>
+                <div class="logo backend" data-name="C"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"
+                        loading="lazy" />
+                </div>
+                <div class="logo backend" data-name="C++"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                        alt="C++" loading="lazy" />
+                </div>
+
+                <!-- Database -->
+                <div class="logo database" data-name="MySQL"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+                        loading="lazy" />
+                </div>
+                <div class="logo database" data-name="SQLite"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"
+                        loading="lazy" />
+                </div>
+                <div class="logo database" data-name="Firebase"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                        alt="Firebase" loading="lazy" />
+                </div>
+                <div class="logo database" data-name="Django"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"
+                        loading="lazy" />
+                </div>
+
+                <!-- CMS -->
+                <div class="logo cms" data-name="WordPress"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
+                        alt="WordPress" loading="lazy" />
+                </div>
+                <div class="logo cms" data-name="Magento"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/magento/magento-original.svg"
+                        alt="Magento" loading="lazy" />
+                </div>
 
             </div>
-            <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Latest Insights & Trends </h2>
-            <p class="blog-subtitle">Insights, updates, and expert knowledge from cortellect</p>
+        </section>
 
-            <div class="blog-grid">
-
-                <!-- Blog Card 1: Enterprise CRM -->
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="assets/images/blog/blog_crm.webp" alt="Enterprise CRM">
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-20">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-black mb-4">
+                        OUR SERVICES
                     </div>
-                    <h3 class="blog-headline">How Enterprise CRM Transforms Business Efficiency</h3>
-                    <p class="blog-text">
-                        Discover how AI-powered enterprise CRM solutions streamline workflows and boost performance.
+                    <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Enterprise Software Solutions</h2>
+                    <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                        Comprehensive development services backed by modern tech stack and proven delivery excellence
                     </p>
-                    <span class="blog-date">Jul 22, 2024</span>
-                    <a href="./blogs/blog-crm.html" class="blog-btn">Read More</a>
                 </div>
 
-                <!-- Blog Card 2: AI Automation -->
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="assets/images/blog/blog_ai.webp" alt="AI Automation" loading="lazy" decoding="async">
-                    </div>
-                    <h3 class="blog-headline">AI Integration: The Future of Smart Automation</h3>
-                    <p class="blog-text">
-                        Learn how AI automation improves accuracy, reduces manual work, and modernizes operations.
-                    </p>
-                    <span class="blog-date">Aug 10, 2024</span>
-                    <a href="./blogs/blog-ai.html" class="blog-btn">Read More</a>
-                </div>
+                <div class="services-grid">
 
-                <!-- Blog Card 3: Web Development -->
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="assets/images/blog/blog_web_dev.webp" alt="Web Development" loading="lazy"
+                    <!-- LEFT COLUMN (ICON RIGHT) -->
+                    <div class="service-box service-icon-right">
+                        <img src="assets/icons/crm.webp" alt="Enterprise CRM development solutions icon" width="70"
+                            height="70">
+                        <div>
+                            <div class="service-title">Enterprise CRM Development</div>
+                            <div class="service-text">Say goodbye to generic software! Our Enterprise CRM solutions are
+                                tailored to your business needs, blending AI-driven insights with expert manual
+                                customization to boost efficiency, customer engagement, and revenue growth.</div>
+
+                            <a href="./services/enterprise-crm-development.html"
+                                class="inline-block mt-2 text-[#2980b9] text-[14px] font-black hover:underline cursor-pointer">
+                                Explore CRM Solutions →
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="service-box service-icon-left">
+                        <img src="assets/icons/emss.webp" alt="Enterprise Management System software development icon"
+                            width="70" height="70">
+                        <div>
+                            <div class="service-title">Enterprise EMS</div>
+                            <div class="service-text">Streamline your organization with our Enterprise Management
+                                Systems.
+                                Optimize workflows, enhance collaboration, and track performance effortlessly across
+                                departments.</div>
+
+                            <a href="./services/erp-enterprise.html"
+                                class="inline-block mt-2 text-[#2980b9] text-[14px] font-black hover:underline cursor-pointer">
+                                Discover EMS Features →
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="service-box service-icon-right">
+                        <img src="assets/icons/webapp.webp" alt="Custom web application development service icon"
+                            width="70" height="70">
+                        <div>
+                            <div class="service-title">Custom Web Applications</div>
+                            <div class="service-text"> Transform your ideas into high-performance web applications. We
+                                craft
+                                scalable, secure, and user-friendly solutions that perfectly fit your business
+                                requirements.
+                            </div>
+
+                            <a href="./services/custom-web-application.html"
+                                class="inline-block mt-2 text-[#2980b9] text-[14px] font-black hover:underline cursor-pointer">
+                                Build Your Web App →
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="service-box service-icon-left">
+                        <img src="./assets/icons/AI.webp" alt="AI integration and automation solutions icon" width="70"
+                            height="70" loading="lazy" decoding="async">
+                        <div>
+                            <div class="service-title">AI Integration & Automation</div>
+                            <div class="service-text">Leverage the power of AI to automate processes, reduce errors, and
+                                make smarter, data-driven decisions. From predictive analytics to intelligent workflows,
+                                we
+                                bring automation to the next level.</div>
+
+                            <a href="./services/ai-integration-automation.html"
+                                class="inline-block mt-2 text-[#2980b9] text-[14px] font-black hover:underline cursor-pointer">
+                                Automate your business workflow →
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="service-box service-icon-right">
+                        <img src="assets/icons/mobileapp.webp" alt="Mobile application development services icon"
+                            width="70" height="70" loading="lazy" decoding="async">
+                        <div>
+                            <div class="service-title">Mobile App Development</div>
+                            <div class="service-text">Create fast, secure, and intuitive mobile apps for Android and iOS
+                                that engage users and drive business growth. We turn your mobile vision into reality.
+                            </div>
+
+                            <a href="./services/mobile-app-development.html"
+                                class="inline-block mt-2 text-[#2980b9] text-[14px] font-black hover:underline cursor-pointer">
+                                Hire mobile app developers →
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="service-box service-icon-left">
+                        <img src="assets/icons/wordpress.webp" alt="" width="70" height="70" loading="lazy"
                             decoding="async">
+                        <div>
+                            <div class="service-title">WordPress Websites</div>
+                            <div class="service-text">Bring your brand online with a dynamic, responsive, and
+                                fully-customizable WordPress website. Perfect for businesses looking to impress and
+                                convert
+                                visitors effortlessly.
+                            </div>
+
+                            <a href="./services/wordpress-websites.html"
+                                class="inline-block mt-2 text-[#2980b9] text-[14px] font-black hover:underline cursor-pointer">
+                                Go Live with WordPress →
+                            </a>
+
+                        </div>
                     </div>
-                    <h3 class="blog-headline">Building Scalable Web Applications in 2025</h3>
-                    <p class="blog-text">
-                        Explore modern frameworks and best practices for developing scalable web applications.
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Industries Section -->
+        <section class="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-16 lg:mb-20">
+                    <div
+                        class="inline-flex items-center bg-blue-100 text-blue-600 px-6 py-2.5 rounded-full font-black mb-6 shadow-sm">
+                        <i class="fas fa-industry mr-2 text-sm"></i>
+                        INDUSTRIES WE SERVE
+                    </div>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+                        Empowering <span class="text-blue-600">Diverse Sectors</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+                        Delivering tailored digital solutions across multiple industries with proven expertise and
+                        cutting-edge technology
                     </p>
-                    <span class="blog-date">Sep 02, 2024</span>
-                    <a href="./blogs/blog-web-app.html" class="blog-btn">Read More</a>
                 </div>
 
-            </div>
-        </div>
-    </section>
-    <!-- BLOG SECTION END -->
+                <!-- Industries Grid -->
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-6">
-                        ABOUT US
-                    </div>
-                    <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Building Digital Excellence Since
-                        2022</h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                        cortellect is an international software house specializing in enterprise-grade solutions, AI
-                        integration, and custom web applications. We serve global clients with cutting-edge technology
-                        and exceptional delivery standards.
+                <div class="industries-grid">
+
+                    <a class="industry-card" href="./industries.html">
+
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-yellow"><i class="fas fa-home"></i></div>
+                        <div class="industry-card-title">Real estate
+
+
+                        </div>
+
+
+                    </a>
+
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-green"><i class="fas fa-tools"></i></div>
+                        <div class="industry-card-title">
+                            Engineering and construction
+                        </div>
+
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-pink"><i class="fas fa-cart-shopping"></i></div>
+                        <div class="industry-card-title">Retail</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-blue"><i class="fas fa-industry"></i></div>
+                        <div class="industry-card-title">Manufacturing</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-mint"><i class="fas fa-truck"></i></div>
+                        <div class="industry-card-title">Logistics and Transportation</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-red"><i class="fas fa-oil-can"></i></div>
+                        <div class="industry-card-title">Oil and Gas</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-yellow"><i class="fas fa-recycle"></i></div>
+                        <div class="industry-card-title">Energy and utilities</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-blue"><i class="fas fa-briefcase"></i></div>
+                        <div class="industry-card-title">Professional services</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-green"><i class="fas fa-wifi"></i></div>
+                        <div class="industry-card-title">Telecoms</div>
+                    </a>
+
+                    <a class="industry-card" href="./industries.html">
+                        <div class="industry-arrow">↗</div>
+                        <div class="industry-icon icon-light-yellow"><i class="fas fa-plane"></i></div>
+                        <div class="industry-card-title">Travel and hospitality</div>
+                    </a>
+
+                </div>
+
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 text-lg mb-6">Don't see your industry? We adapt our solutions to any sector.
                     </p>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Our team combines technical expertise with business understanding to deliver solutions that
-                        drive growth, efficiency, and innovation for businesses worldwide.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-8">
-                        <div class="bg-blue-50 rounded-xl p-6">
-                            <div class="text-4xl font-black text-blue-600 mb-2 counter" data-target="50"
-                                data-suffix="+">50+</div>
-                            <div class="text-gray-700 font-semibold">Projects Completed</div>
-                        </div>
-                        <div class="bg-blue-50 rounded-xl p-6">
-                            <div class="text-4xl font-black text-blue-600 mb-2 counter" data-target="40"
-                                data-suffix="+">40+</div>
-                            <div class="text-gray-700 font-semibold">Happy Clients</div>
-                        </div>
-                        <div class="bg-blue-50 rounded-xl p-6">
-                            <div class="text-4xl font-black text-blue-600 mb-2 counter" data-target="99"
-                                data-suffix="%">99%</div>
-                            <div class="text-gray-700 font-semibold">Client Satisfaction</div>
-                        </div>
-                        <div class="bg-blue-50 rounded-xl p-6">
-                            <div class="text-4xl font-black text-blue-600 mb-2">24hr</div>
-                            <div class="text-gray-700 font-semibold">Response Time</div>
-                        </div>
-                    </div>
-
-                    <button
-                        class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                    <a href="./contact.html"
+                        class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-black hover:shadow-2xl transform hover:scale-105 transition text-lg"
                         style="background-color: #4169E1;">
-                        <a href="./contact.html"><i class="fas fa-users mr-2"></i> Meet Our Team</a>
+                        <i class="fas fa-comments mr-2"></i>Discuss Your Industry Needs
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Portfolio -->
+        <section id="projects" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-20">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-black mb-4">
+                        PORTFOLIO
+                    </div>
+                    <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Featured Projects</h2>
+                    <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                        Showcasing our expertise through successfully delivered enterprise solutions
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="assets/images/projects/crm-section.webp" alt="CRM System"
+                            class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
+                        <div
+                            class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                            <div
+                                class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <span
+                                        class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-black">Enterprise</span>
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-black">Completed</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-black mb-2">Enterprise CRM System</h3>
+                                <p class="text-gray-200 mb-4">Lead management, B2B meetings, analytics dashboard.</p>
+                                <span class="text-blue-400 font-black">React.js, Node.js, PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="assets/images/projects/image-464.26x384.webp" alt="WordPress Site"
+                            class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
+                        <div
+                            class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                            <div
+                                class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <span
+                                        class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-black">WordPress</span>
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-black">Completed</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-black mb-2">Corporate WordPress Website</h3>
+                                <p class="text-gray-200 mb-4">SEO-ready business site with Elementor Pro.</p>
+                                <span class="text-blue-400 font-black">WordPress, PHP, MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="assets/images/projects/Ai-chatbot-sys.webp"
+                            alt="AI-powered chatbot system project built by cortellect software house"
+                            class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
+                        <div
+                            class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                            <div
+                                class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <span
+                                        class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-black">AI/ML</span>
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-black">Completed</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-black mb-2">AI Q/A Chatbot System</h3>
+                                <p class="text-gray-200 mb-4">Desktop chatbot using AI integration and NLP.</p>
+                                <span class="text-blue-400 font-black">Python, OpenRouter, Tkinter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="assets/images/projects/EMS-section.webp" alt="EMS" class="w-full h-96 object-cover"
+                            width="823" height="433" loading="lazy" decoding="async">
+                        <div
+                            class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                            <div
+                                class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <span
+                                        class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-black">Enterprise</span>
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-black">Completed</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-black mb-2">Employee Management System</h3>
+                                <p class="text-gray-200 mb-4">Attendance, HR tools, performance analytics.</p>
+                                <span class="text-blue-400 font-black">React.js, Node.js, PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="assets/images/projects/hotelbook.webp" alt="Hotel Booking"
+                            class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
+                        <div
+                            class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                            <div
+                                class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-black">Web
+                                        App</span>
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-black">Completed</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-black mb-2">Hotel Booking Platform</h3>
+                                <p class="text-gray-200 mb-4">Room management, calendar booking, payments.</p>
+                                <span class="text-blue-400 font-black">React.js, Express.js, MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="assets/images/projects/e-commerce.webp" alt="E-Commerce"
+                            class="w-full h-96 object-cover" width="823" height="433" loading="lazy" decoding="async">
+                        <div
+                            class="absolute inset-0 project-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                            <div
+                                class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <span
+                                        class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-black">E-Commerce</span>
+                                    <span
+                                        class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-black">Completed</span>
+                                </div>
+                                <h3 class="text-white text-3xl font-black mb-2">E-Commerce Web Application</h3>
+                                <p class="text-gray-200 mb-4">Product catalog, cart, secure checkout.</p>
+                                <span class="text-blue-400 font-black">React.js, Node.js, PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <button
+                        class="bg-blue-600 text-white px-10 py-4 rounded-xl font-black hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                        style="background-color: #4169E1;">
+                        View All Projects <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                 </div>
+            </div>
+        </section>
 
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop"
-                        alt="Team" class="rounded-2xl shadow-2xl" width="600" height="600" loading="lazy"
-                        decoding="async">
+        <!-- Stats Section -->
+        <section class="bg-white py-12 relative z-20 stats-custom-margin">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="bg-blue-600 rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10" style="background-color: #001F3F;">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
 
-                    <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-2xl p-6 hidden lg:block">
+                        <!-- Counter 1 -->
+                        <div class="text-center">
+                            <div class="text-5xl lg:text-6xl font-black text-white mb-2 counter" data-target="50">0+
+                            </div>
+                            <div class="text-white font-black text-lg mb-1">Projects Delivered</div>
+                            <div class="text-blue-100 text-sm">Successfully Completed</div>
+                        </div>
+
+                        <!-- Counter 2 -->
+                        <div class="text-center">
+                            <div class="text-5xl lg:text-6xl font-black text-white mb-2 counter" data-target="40">0+
+                            </div>
+                            <div class="text-white font-black text-lg mb-1">Happy Clients</div>
+                            <div class="text-blue-100 text-sm">Worldwide</div>
+                        </div>
+
+                        <!-- Counter 3 -->
+                        <div class="text-center">
+                            <div class="text-5xl lg:text-6xl font-black text-white mb-2 counter" data-target="99">0%
+                            </div>
+                            <div class="text-white font-black text-lg mb-1">Satisfaction Rate</div>
+                            <div class="text-blue-100 text-sm">Client Reviews</div>
+                        </div>
+
+                        <!-- Static (no counter) -->
+                        <div class="text-center">
+                            <div class="text-5xl lg:text-6xl font-black text-white mb-2">3+</div>
+                            <div class="text-white font-black text-lg mb-1">Years Experience</div>
+                            <div class="text-blue-100 text-sm">Industry Expertise</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="wcu-container-wrapper">
+
+                    <!-- pill -->
+                    <div class="wcu-pill">WHY CHOOSE US</div>
+
+                    <!-- Heading -->
+                    <div class="wcu-hero">
+                        <h1>Why <span class="wcu-brand">Cortellect</span> is The Right Choice for You</h1>
+                    </div>
+
+                    <!-- main grid -->
+                    <div class="wcu-grid">
+
+                        <!-- LEFT COLUMN -->
+                        <div class="wcu-left-col">
+
+                            <!-- Top-left feature -->
+                            <div class="wcu-feature-card" aria-labelledby="f1-title">
+                                <div class="wcu-icon-wrap" aria-hidden="true">
+                                    <!-- icon: user group with stars -->
+                                    <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="9" r="3" />
+                                        <path d="M4 20c0-3 4-5 8-5s8 2 8 5" />
+                                        <circle cx="6" cy="7" r="1" />
+                                        <circle cx="18" cy="7" r="1" />
+                                    </svg>
+                                </div>
+
+                                <div class="wcu-feature-content">
+                                    <h3 id="f1-title">Expert Developers</h3>
+                                    <p>Work with top industry professionals who bring years of real-world experience,
+                                        providing you with cutting-edge solutions, modern tools, and best practices to
+                                        ensure your project's success.</p>
+                                </div>
+                            </div>
+
+                            <!-- Top-right feature -->
+                            <div class="wcu-feature-card" aria-labelledby="f2-title">
+                                <div class="wcu-icon-wrap" aria-hidden="true">
+                                    <!-- icon: rocket -->
+                                    <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true">
+                                        <path d="M14 4s-1 1-3 3c-2 2-3 4-3 4s1 1 3 1 4-1 4-1 0-2-1-4 0-3 0-3z" />
+                                        <path d="M7 17c-1 1-4 2-4 2s1-3 2-4" />
+                                    </svg>
+                                </div>
+
+                                <div class="wcu-feature-content">
+                                    <h3 id="f2-title">Business-Ready Solutions</h3>
+                                    <p>Get enterprise-grade software that's production-ready, scalable, and built to
+                                        industry standards, helping you accelerate your business growth and stay
+                                        competitive in the market.</p>
+                                </div>
+                            </div>
+
+                            <!-- Large card spanning below -->
+                            <div class="wcu-feature-large" aria-labelledby="f3-title">
+                                <div class="wcu-icon-wrap" aria-hidden="true" style="align-self:flex-start;">
+                                    <!-- icon: target / bullseye -->
+                                    <svg class="wcu-icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="wcu-feature-content">
+                                    <h3 id="f3-title">50+ Enterprise Projects Delivered</h3>
+                                    <p>cortellect has delivered over 50 successful projects across various industries
+                                        including
+                                        CRM systems, e-commerce platforms, AI chatbots, and custom web applications. Our
+                                        proven track record demonstrates our commitment to quality, innovation, and
+                                        client
+                                        satisfaction.</p>
+                                </div>
+                            </div>
+
+                        </div> <!-- END left-col -->
+
+                        <!-- RIGHT COLUMN: promo -->
+                        <aside class="wcu-promo" aria-labelledby="promo-title">
+                            <div>
+                                <div class="wcu-promo-icon" aria-hidden="true">
+                                    <!-- promo icon: document outline -->
+                                    <svg class="wcu-icon-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true">
+                                        <rect x="5" y="4" width="12" height="16" rx="2" ry="2" />
+                                        <path d="M9 8h6" stroke-linecap="round" />
+                                        <path d="M9 12h6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <h3 id="promo-title">24/7 Support & Fast Response</h3>
+                                <p>At cortellect, we understand the importance of timely support for your business.
+                                    That's why we offer 24-hour response time and dedicated support to keep your
+                                    projects
+                                    running smoothly.<br><br>Whether you need urgent fixes or ongoing maintenance, our
+                                    team
+                                    is always ready to assist you.</p>
+                            </div>
+
+                            <div>
+                                <a class="wcu-cta" href="./contact.html" aria-label="Start Your Project">
+                                    Start Your Project
+                                    <!-- arrow -->
+                                    <svg width="14" height="14" viewBox="0 0 24 24"
+                                        style="display:inline-block; vertical-align:middle;">
+                                        <path d="M5 12h14M13 6l6 6-6 6" stroke="#00311f" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </aside>
+
+                    </div> <!-- END grid -->
+
+                </div> <!-- END wcu-container-wrapper -->
+            </div> <!-- END container -->
+        </section>
+
+
+
+
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-20">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-black mb-4">
+                        CLIENT REVIEWS
+                    </div>
+                    <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">What Our Clients Say</h2>
+                    <div class="flex justify-center items-center space-x-2 mb-4">
+                        <div class="flex text-yellow-400 text-2xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-700 font-black text-xl">5.0 out of 5</span>
+                        <span class="text-gray-500">(40+ reviews)</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div class="testimonial-card rounded-2xl shadow-lg p-8">
+                        <div class="flex text-yellow-400 text-xl mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
+                            "cortellect delivered a world-class CRM & EMS system with dashboards, B2B meetings, and
+                            analytics."
+                        </p>
                         <div class="flex items-center space-x-4">
-                            <div class="bg-blue-100 rounded-full p-4">
-                                <i class="fas fa-award text-blue-600 text-3xl"></i>
+                            <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-black text-xl"
+                                style="background-color: #4169E1;">
+                                BE
                             </div>
                             <div>
-                                <div class="text-2xl font-bold text-gray-800">Top Rated</div>
-                                <div class="text-gray-600 font-semibold">Software House</div>
+                                <div class="font-black text-gray-800 text-lg">Badar Expo</div>
+                                <div class="text-gray-600">Enterprise Client</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card rounded-2xl shadow-lg p-8">
+                        <div class="flex text-yellow-400 text-xl mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
+                            "Our WordPress website now performs significantly better with cortellect's SEO &
+                            mobile-first
+                            design."
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-black text-xl"
+                                style="background-color: #4169E1;">
+                                DM
+                            </div>
+                            <div>
+                                <div class="font-black text-gray-800 text-lg">Digital Marketing Agency</div>
+                                <div class="text-gray-600">Marketing Firm</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card rounded-2xl shadow-lg p-8">
+                        <div class="flex text-yellow-400 text-xl mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">
+                            "Outstanding AI chatbot implementation! The Q/A system transformed our customer support
+                            operations."
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-white font-black text-xl"
+                                style="background-color: #4169E1;">
+                                TS
+                            </div>
+                            <div>
+                                <div class="font-black text-gray-800 text-lg">Tech Startup</div>
+                                <div class="text-gray-600">SaaS Company</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- BLOG SECTION START -->
+        <section class="blog-section">
+            <div class="blog-container">
+                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-black mb-4">
+                    Our Blogs
 
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 relative overflow-hidden" style="background-color: #001F3F;">
-        <div class="container mx-auto px-4 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl lg:text-6xl font-black text-white mb-6">Ready to Start Your Project?</h2>
-                <p class="text-blue-100 text-xl max-w-3xl mx-auto leading-relaxed">
-                    Let's discuss your requirements and build something amazing together
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                <div class="bg-white rounded-3xl shadow-2xl p-10">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-                    <form id="contactForm" class="space-y-4">
-                        <div>
-                            <!-- Accessibility fix: added for attribute to label -->
-                            <label for="fullName" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                            <!-- Accessibility fix: added autocomplete attribute -->
-                            <input type="text" name="fullName" id="fullName" autocomplete="name"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
-                                placeholder="John Doe" required>
-                        </div>
-                        <div>
-                            <!-- Accessibility fix: added for attribute to label -->
-                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
-                            <!-- Accessibility fix: added autocomplete attribute -->
-                            <input type="email" name="email" id="email" autocomplete="email"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
-                                placeholder="john@example.com" required>
-                        </div>
-                        <div>
-                            <label for="budget" class="block text-gray-700 font-semibold mb-2">Project Budget</label>
-                            <select name="budget" id="budget" autocomplete="off"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
-                                required>
-                                <option value="">Select Budget Range</option>
-                                <option>$1,000 - $5,000</option>
-                                <option>$5,000 - $10,000</option>
-                                <option>$10,000 - $25,000</option>
-                                <option>$25,000+</option>
-                            </select>
-                        </div>
-                        <div>
-                            <!-- Accessibility fix: added for attribute to label -->
-                            <label for="details" class="block text-gray-700 font-semibold mb-2">Project Details</label>
-                            <textarea name="details" id="details" rows="4"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
-                                placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        <button type="submit" id="submitBtn" name="submit"
-                            class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
-                            style="background-color: #4169E1;">
-                            <i class="fas fa-paper-plane mr-2"></i> Send Message
-                        </button>
-                    </form>
                 </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Latest Insights & Trends </h2>
+                <p class="blog-subtitle">Insights, updates, and expert knowledge from cortellect</p>
 
-                <div class="text-white">
-                    <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
+                <div class="blog-grid">
 
-                    <div class="space-y-6 mb-12">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
-                                <i class="fas fa-envelope text-2xl"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-lg mb-1">Email Us</div>
-                                <div class="text-blue-100">info@cortellect.com</div>
-                                <div class="text-blue-100">support@cortellect.com</div>
-                            </div>
+                    <!-- Blog Card 1: Enterprise CRM -->
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/images/blog/blog_crm.webp" alt="Enterprise CRM">
                         </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
-                                <i class="fas fa-phone-alt text-2xl"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-lg mb-1">Call Us</div>
-                                <div class="text-blue-100">+92 300 1234567</div>
-                                <div class="text-blue-100">Mon-Fri: 9am - 6pm PST</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
-                                <i class="fas fa-map-marker-alt text-2xl"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-lg mb-1">Visit Us</div>
-                                <div class="text-blue-100">Karachi, Sindh</div>
-                                <div class="text-blue-100">Pakistan</div>
-                            </div>
-                        </div>
+                        <h3 class="blog-headline">How Enterprise CRM Transforms Business Efficiency</h3>
+                        <p class="blog-text">
+                            Discover how AI-powered enterprise CRM solutions streamline workflows and boost performance.
+                        </p>
+                        <span class="blog-date">Jul 22, 2024</span>
+                        <a href="./blogs/blog-crm.html" class="blog-btn"
+                            aria-label="Read more about Enterprise CRM Solutions">Read More</a>
                     </div>
 
+                    <!-- Blog Card 2: AI Automation -->
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/images/blog/blog_ai.webp" alt="AI Automation" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <h3 class="blog-headline">AI Integration: The Future of Smart Automation</h3>
+                        <p class="blog-text">
+                            Learn how AI automation improves accuracy, reduces manual work, and modernizes operations.
+                        </p>
+                        <span class="blog-date">Aug 10, 2024</span>
+                        <a href="./blogs/blog-ai.html" class="blog-btn" aria-label="Read more about AI Integration">Read
+                            More</a>
+                    </div>
+
+                    <!-- Blog Card 3: Web Development -->
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/images/blog/blog_web_dev.webp" alt="Web Development" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <h3 class="blog-headline">Building Scalable Web Applications in 2025</h3>
+                        <p class="blog-text">
+                            Explore modern frameworks and best practices for developing scalable web applications.
+                        </p>
+                        <span class="blog-date">Sep 02, 2024</span>
+                        <a href="./blogs/blog-web-app.html" class="blog-btn"
+                            aria-label="Read more about Scalable Web Applications">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- BLOG SECTION END -->
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <div class="font-bold text-lg mb-4">Follow Us</div>
-                        <div class="flex space-x-4">
-                            <a href="#"
-                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
-                                <i class="fab fa-github text-2xl"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
-                                <i class="fab fa-linkedin-in text-2xl"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
-                                <i class="fab fa-twitter text-2xl"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
-                                <i class="fab fa-instagram text-2xl"></i>
-                            </a>
+                        <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-black mb-6">
+                            ABOUT US
+                        </div>
+                        <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Building Digital Excellence Since
+                            2022</h2>
+                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            Cortellect is an international software house specializing in enterprise-grade solutions, AI
+                            integration, and custom web applications. We serve global clients with cutting-edge
+                            technology
+                            and exceptional delivery standards.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                            Our team combines technical expertise with business understanding to deliver solutions that
+                            drive growth, efficiency, and innovation for businesses worldwide.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-8">
+                            <div class="bg-blue-50 rounded-xl p-6">
+                                <div class="text-4xl font-black text-blue-600 mb-2 counter" data-target="50"
+                                    data-suffix="+">50+</div>
+                                <div class="text-gray-700 font-semibold">Projects Completed</div>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-6">
+                                <div class="text-4xl font-black text-blue-600 mb-2 counter" data-target="40"
+                                    data-suffix="+">40+</div>
+                                <div class="text-gray-700 font-semibold">Happy Clients</div>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-6">
+                                <div class="text-4xl font-black text-blue-600 mb-2 counter" data-target="99"
+                                    data-suffix="%">99%</div>
+                                <div class="text-gray-700 font-semibold">Client Satisfaction</div>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-6">
+                                <div class="text-4xl font-black text-blue-600 mb-2">24hr</div>
+                                <div class="text-gray-700 font-semibold">Response Time</div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="bg-blue-600 text-white px-8 py-4 rounded-xl font-black hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                            style="background-color: #4169E1;">
+                            <a href="./contact.html"><i class="fas fa-users mr-2"></i> Meet Our Team</a>
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop"
+                            alt="Team" class="rounded-2xl shadow-2xl" width="600" height="600" loading="lazy"
+                            decoding="async">
+
+                        <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-2xl p-6 hidden lg:block">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-blue-100 rounded-full p-4">
+                                    <i class="fas fa-award text-blue-600 text-3xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-gray-800">Top Rated</div>
+                                    <div class="text-gray-600 font-semibold">Software House</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== FAQ SECTION ========== -->
-    <section id="faq" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative overflow-hidden" style="background-color: #001F3F;">
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl lg:text-6xl font-black text-white mb-6">Ready to Start Your Project?</h2>
+                    <p class="text-blue-100 text-xl max-w-3xl mx-auto leading-relaxed">
+                        Let's discuss your requirements and build something amazing together
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                    <div class="bg-white rounded-3xl shadow-2xl p-10">
+                        <h3 class="text-3xl font-black text-gray-800 mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <!-- Accessibility fix: added for attribute to label -->
+                                <label for="fullName" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                                <!-- Accessibility fix: added autocomplete attribute -->
+                                <input type="text" name="fullName" id="fullName" autocomplete="name"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                    placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <!-- Accessibility fix: added for attribute to label -->
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                                <!-- Accessibility fix: added autocomplete attribute -->
+                                <input type="email" name="email" id="email" autocomplete="email"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                    placeholder="john@example.com" required>
+                            </div>
+                            <div>
+                                <label for="budget" class="block text-gray-700 font-semibold mb-2">Project
+                                    Budget</label>
+                                <select name="budget" id="budget" autocomplete="off"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                    required>
+                                    <option value="">Select Budget Range</option>
+                                    <option>$1,000 - $5,000</option>
+                                    <option>$5,000 - $10,000</option>
+                                    <option>$10,000 - $25,000</option>
+                                    <option>$25,000+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <!-- Accessibility fix: added for attribute to label -->
+                                <label for="details" class="block text-gray-700 font-semibold mb-2">Project
+                                    Details</label>
+                                <textarea name="details" id="details" rows="4"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-600 focus:outline-none transition"
+                                    placeholder="Tell us about your project..." required></textarea>
+                            </div>
+                            <button type="submit" id="submitBtn" name="submit"
+                                class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-black hover:shadow-2xl transform hover:scale-105 transition text-lg"
+                                style="background-color: #4169E1;">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="text-white">
+                        <h3 class="text-3xl font-black mb-8">Get in Touch</h3>
+
+                        <div class="space-y-6 mb-12">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                    <i class="fas fa-envelope text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-black text-lg mb-1">Email Us</div>
+                                    <div class="text-blue-100">info@cortellect.com</div>
+                                    <div class="text-blue-100">support@cortellect.com</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                    <i class="fas fa-phone-alt text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-black text-lg mb-1">Call Us</div>
+                                    <div class="text-blue-100">+92 300 1234567</div>
+                                    <div class="text-blue-100">Mon-Fri: 9am - 6pm PST</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-black text-lg mb-1">Visit Us</div>
+                                    <div class="text-blue-100">Karachi, Sindh</div>
+                                    <div class="text-blue-100">Pakistan</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="font-black text-lg mb-4">Follow Us</div>
+                            <div class="flex space-x-4">
+                                <a href="#" aria-label="GitHub"
+                                    class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                    <i class="fab fa-github text-2xl"></i>
+                                </a>
+                                <a href="#" aria-label="LinkedIn"
+                                    class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                    <i class="fab fa-linkedin-in text-2xl"></i>
+                                </a>
+                                <a href="#" aria-label="Twitter"
+                                    class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                    <i class="fab fa-twitter text-2xl"></i>
+                                </a>
+                                <a href="#" aria-label="Instagram"
+                                    class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-30 transition">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQ SECTION ========== -->
+        <section id="faq" class="gxacc-wrapper py-16 px-4 bg-gray-50">
             <div class="text-center mb-12">
                 <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
                     FREQUENTLY ASKED QUESTIONS
@@ -3142,109 +3268,117 @@
                     Everything you need to know about working with cortellect
                 </p>
             </div>
-
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button onclick="toggleFAQ(1)"
-                        class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition">
-                        <h3 class="text-lg font-bold text-gray-900 pr-4">
-                            What services does cortellect offer?
-                        </h3>
-                        <i id="faq-icon-1" class="fas fa-chevron-down text-blue-600 transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            cortellect offers enterprise software development, AI-powered automation solutions, custom
-                            web
-                            application development, mobile app development, and tech consultancy services. We
-                            specialize in scalable, high-performance solutions for businesses worldwide.
-                        </p>
+            <div class="gxacc-container mx-auto max-w-3xl space-y-4">
+                <!-- FAQ 1: What services does cortellect offer? -->
+                <div class="gxacc-box border rounded-2xl overflow-hidden shadow bg-white">
+                    <div class="gxacc-item hover:bg-gray-50 transition">
+                        <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(1)"
+                            aria-expanded="false" aria-controls="gxacc-content1">
+                            <span class="gxacc-title text-xl font-semibold">What services does Cortellect offer?</span>
+                            <i id="gxacc-arrow1" class="fa-solid fa-chevron-down text-blue-600 text-xl gxacc-arrow"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div id="gxacc-content1" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                            <p>
+                                Cortellect offers enterprise software development, AI-powered automation solutions,
+                                custom web application development, mobile app development, and tech consultancy
+                                services. We specialize in scalable, high-performance solutions for businesses
+                                worldwide.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button onclick="toggleFAQ(2)"
-                        class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition">
-                        <h3 class="text-lg font-bold text-gray-900 pr-4">
-                            Where does cortellect operate?
-                        </h3>
-                        <i id="faq-icon-2" class="fas fa-chevron-down text-blue-600 transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            cortellect is an international software house serving clients in Pakistan, United Kingdom,
-                            United States, and globally. We have delivered 200+ projects across 50+ countries.
-                        </p>
+                <!-- FAQ 2: Where does cortellect operate? -->
+                <div class="gxacc-box border rounded-2xl overflow-hidden shadow bg-white">
+                    <div class="gxacc-item hover:bg-gray-50 transition">
+                        <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(2)"
+                            aria-expanded="false" aria-controls="gxacc-content2">
+                            <span class="gxacc-title text-xl font-semibold">Where does Cortellect operate?</span>
+                            <i id="gxacc-arrow2" class="fa-solid fa-chevron-down text-blue-600 text-xl gxacc-arrow"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div id="gxacc-content2" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                            <p>
+                                Cortellect is an international software house serving clients in Pakistan, United
+                                Kingdom, United States, and globally. We have delivered 200+ projects across 50+
+                                countries.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button onclick="toggleFAQ(3)"
-                        class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition">
-                        <h3 class="text-lg font-bold text-gray-900 pr-4">
-                            What makes cortellect different from other software houses?
-                        </h3>
-                        <i id="faq-icon-3" class="fas fa-chevron-down text-blue-600 transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            cortellect combines global expertise with proven delivery excellence. We offer 99% client
-                            satisfaction, 24/7 support, and specialize in enterprise-grade solutions with modern tech
-                            stacks including AI integration and cloud-based applications.
-                        </p>
+                <!-- FAQ 3: What makes cortellect different? -->
+                <div class="gxacc-box border rounded-2xl overflow-hidden shadow bg-white">
+                    <div class="gxacc-item hover:bg-gray-50 transition">
+                        <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(3)"
+                            aria-expanded="false" aria-controls="gxacc-content3">
+                            <span class="gxacc-title text-xl font-semibold">What makes Cortellect different from other
+                                software houses?</span>
+                            <i id="gxacc-arrow3" class="fa-solid fa-chevron-down text-blue-600 text-xl gxacc-arrow"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div id="gxacc-content3" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                            <p>
+                                Cortellect combines global expertise with proven delivery excellence. We offer 99%
+                                client satisfaction, 24/7 support, and specialize in enterprise-grade solutions with
+                                modern tech stacks including AI integration and cloud-based applications.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button onclick="toggleFAQ(4)"
-                        class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition">
-                        <h3 class="text-lg font-bold text-gray-900 pr-4">
-                            How long does a typical project take?
-                        </h3>
-                        <i id="faq-icon-4" class="fas fa-chevron-down text-blue-600 transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Project timelines vary based on complexity and scope. Simple web applications typically take
-                            4-8 weeks, while enterprise solutions may require 3-6 months. We provide detailed timelines
-                            during our discovery phase and maintain transparent communication throughout development.
-                        </p>
+                <!-- FAQ 4: How long does a typical project take? -->
+                <div class="gxacc-box border rounded-2xl overflow-hidden shadow bg-white">
+                    <div class="gxacc-item hover:bg-gray-50 transition">
+                        <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(4)"
+                            aria-expanded="false" aria-controls="gxacc-content4">
+                            <span class="gxacc-title text-xl font-semibold">How long does a typical project take?</span>
+                            <i id="gxacc-arrow4" class="fa-solid fa-chevron-down text-blue-600 text-xl gxacc-arrow"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div id="gxacc-content4" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                            <p>
+                                Project timelines vary based on complexity and scope. Simple web applications typically
+                                take 4-8 weeks, while enterprise solutions may require 3-6 months. We provide detailed
+                                timelines during our discovery phase and maintain transparent communication throughout
+                                development.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <button onclick="toggleFAQ(5)"
-                        class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition">
-                        <h3 class="text-lg font-bold text-gray-900 pr-4">
-                            Do you offer post-launch support and maintenance?
-                        </h3>
-                        <i id="faq-icon-5" class="fas fa-chevron-down text-blue-600 transition-transform"></i>
-                    </button>
-                    <div id="faq-answer-5" class="hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Yes! We provide comprehensive post-launch support including bug fixes, performance
-                            optimization, feature enhancements, and 24/7 technical support. We offer flexible
-                            maintenance packages tailored to your business needs.
-                        </p>
+                <!-- FAQ 5: Do you offer post-launch support? -->
+                <div class="gxacc-box border rounded-2xl overflow-hidden shadow bg-white">
+                    <div class="gxacc-item hover:bg-gray-50 transition">
+                        <button class="gxacc-btn w-full p-6 flex justify-between items-center" onclick="gxaccToggle(5)"
+                            aria-expanded="false" aria-controls="gxacc-content5">
+                            <span class="gxacc-title text-xl font-semibold">Do you offer post-launch support and
+                                maintenance?</span>
+                            <i id="gxacc-arrow5" class="fa-solid fa-chevron-down text-blue-600 text-xl gxacc-arrow"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div id="gxacc-content5" class="gxacc-content bg-gray-50 text-gray-700 px-6 leading-7">
+                            <p>
+                                Yes! We provide comprehensive post-launch support including bug fixes, performance
+                                optimization, feature enhancements, and 24/7 technical support. We offer flexible
+                                maintenance packages tailored to your business needs.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div class="text-center mt-12">
                 <p class="text-gray-600 mb-4">Still have questions?</p>
                 <a href="./contact.html"
-                    class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+                    class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-black hover:bg-blue-700 transition"
+                    style="background-color: #4169E1;">
                     Get In Touch
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
+    </main>
     <!-- ========== FOOTER ========== -->
 
 
@@ -3253,7 +3387,7 @@
 
 
     <footer class="bg-gray-900 text-gray-300 py-12 md:py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
             <!-- Newsletter Section -->
             <div class="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl p-6 md:p-8 mb-12">
@@ -3831,20 +3965,42 @@
             observer.observe(el);
         });
 
-        // FAQ Toggle Function
-        function toggleFAQ(id) {
-            const answer = document.getElementById(`faq-answer-${id}`);
-            const icon = document.getElementById(`faq-icon-${id}`);
+        // Accordion Toggle Function with Accessibility Support
+        function gxaccToggle(n) {
+            // Close all other accordions (up to 5 for index.html)
+            for (let i = 1; i <= 5; i++) {
+                const box = document.getElementById("gxacc-content" + i);
+                const arrow = document.getElementById("gxacc-arrow" + i);
+                const button = document.querySelector(`[aria-controls="gxacc-content${i}"]`);
 
-            if (answer.classList.contains('hidden')) {
-                answer.classList.remove('hidden');
-                icon.classList.add('rotate-180');
+                if (i !== n) {
+                    if (box) {
+                        box.style.maxHeight = "0px";
+                        box.classList.remove("gxacc-open");
+                    }
+                    if (arrow) arrow.classList.remove("gxacc-open");
+                    if (button) button.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            // Toggle the clicked accordion
+            const content = document.getElementById("gxacc-content" + n);
+            const arrow = document.getElementById("gxacc-arrow" + n);
+            const button = document.querySelector(`[aria-controls="gxacc-content${n}"]`);
+
+            if (content.style.maxHeight !== "0px" && content.style.maxHeight !== "") {
+                content.style.maxHeight = "0px";
+                content.classList.remove("gxacc-open");
+                arrow.classList.remove("gxacc-open");
+                if (button) button.setAttribute("aria-expanded", "false");
             } else {
-                answer.classList.add('hidden');
-                icon.classList.remove('rotate-180');
+                // Set max-height to scrollHeight + extra padding to ensure all content is visible
+                content.style.maxHeight = (content.scrollHeight + 50) + "px";
+                content.classList.add("gxacc-open");
+                arrow.classList.add("gxacc-open");
+                if (button) button.setAttribute("aria-expanded", "true");
             }
         }
-
     </script>
 </body>
 
