@@ -1702,9 +1702,11 @@
                         Open for New Projects
                     </span>
                     <div class="nav-top-social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61585676462932" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/cortellect-technologies/" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/cortellect" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -2239,18 +2241,22 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <form class="bg-white p-8 rounded-2xl shadow-md space-y-6">
+                    <form id="contactForm" class="bg-white p-8 rounded-2xl shadow-md space-y-6">
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name" class="border p-3 rounded-lg w-full">
-                            <input type="email" placeholder="Email Address" class="border p-3 rounded-lg w-full">
+                            <input type="text" name="fullName" id="fullName" placeholder="Full Name"
+                                class="border p-3 rounded-lg w-full" required>
+                            <input type="email" name="email" id="email" placeholder="Email Address"
+                                class="border p-3 rounded-lg w-full" required>
                         </div>
 
-                        <input type="text" placeholder="Subject" class="border p-3 rounded-lg w-full">
+                        <input type="text" name="subject" id="subject" placeholder="Subject"
+                            class="border p-3 rounded-lg w-full" required>
 
-                        <textarea rows="5" placeholder="Message" class="border p-3 rounded-lg w-full"></textarea>
+                        <textarea name="details" id="details" rows="5" placeholder="Message"
+                            class="border p-3 rounded-lg w-full" required></textarea>
 
-                        <button
+                        <button type="submit"
                             class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">
                             Send Message
                         </button>
@@ -2404,14 +2410,21 @@
 
                     <h4 class="text-white font-bold text-lg mb-4">Follow Us</h4>
                     <div class="flex space-x-3">
-                        <a href="https://github.com/" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
-                            <i class="fab fa-github text-xl"></i>
+                        <a href="https://www.facebook.com/profile.php?id=61585676462932"
+                            class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-facebook text-xl"></i>
                         </a>
-                        <a href="https://linkedin.com/" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                        <a href="https://www.linkedin.com/in/cortellect-technologies"
+                            class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
-                        <a href="https://twitter.com/" class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                        <a href="https://x.com/cortellect"
+                            class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
                             <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/"
+                            class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
+                            <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -2621,14 +2634,8 @@
         });
     </script>
 
-    <!-- EmailJS library -->
+    <!-- EmailJS Library -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("Vm6ZSdzYEzOUn0Gtw"); // Public Key
-        })();
-    </script>
-
-    <!-- Newsletter JS (external, one time file) -->
     <script src="../newsletter.js"></script>
+    <script src="../contact-form.js"></script>
 </body>
