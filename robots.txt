@@ -4,13 +4,14 @@ Disallow: /dist/
 Disallow: /src/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /assets/
 Disallow: /README.md
 Disallow: /package.json
 Disallow: /package-lock.json
 Disallow: /tailwind.config.js
 Disallow: /contact-form.js
 Disallow: /newsletter.js
-Allow: /
+
+# Allow favicon icons
+Allow: /assets/icons/favicon/
 
 Sitemap: https://www.cortellect.com/sitemap.xml
