@@ -361,6 +361,14 @@
             transition: all 0.3s;
         }
 
+        /* Responsive adjustment for the CTA button between 1044.10px and 1080px */
+        @media (min-width: 1044.10px) and (max-width: 1080px) {
+            .cortellect-navbar .nav-cta-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.875rem;
+            }
+        }
+
         .cortellect-navbar .nav-cta-btn:hover {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: scale(1.05);
@@ -533,7 +541,7 @@
             }
         }
 
-        @media (min-width:640px) and (max-width:1023px) {
+        @media (min-width:640px) and (max-width:1044.00px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -548,11 +556,11 @@
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
-        @media (min-width:1024px) {
+        @media (min-width:1044.10px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -566,16 +574,16 @@
             }
 
             .cortellect-navbar .nav-desktop-menu {
-                display: flex;
+                display: flex !important;
             }
 
             .cortellect-navbar .nav-mobile-toggle {
-                display: none;
+                display: none !important;
             }
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
@@ -1417,6 +1425,18 @@
             stroke: rgba(255, 255, 255, 0.9);
             stroke-width: 1.6;
             fill: none
+        }
+
+        /* Fix: Scoped overflow fix for 1024px-1280px */
+        @media (min-width: 1024px) and (max-width: 1280px) {
+            .wcu-left-col {
+                grid-auto-rows: auto !important;
+            }
+
+            .wcu-feature-content {
+                min-width: 0;
+                overflow-wrap: break-word;
+            }
         }
 
         @media (max-width:640px) {

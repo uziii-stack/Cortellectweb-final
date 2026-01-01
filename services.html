@@ -187,7 +187,18 @@
             padding: 0.75rem;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            animation: nav-pulse-glow 2s infinite alternate;
+            position: relative;
+        }
+
+        .cortellect-navbar .nav-logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px #4169E1;
+            opacity: 0;
+            z-index: -1;
+            animation: nav-pulse-opacity 2s infinite alternate;
         }
 
         .cortellect-navbar .nav-logo-icon i {
@@ -216,13 +227,13 @@
             font-weight: 600;
         }
 
-        @keyframes nav-pulse-glow {
+        @keyframes nav-pulse-opacity {
             from {
-                box-shadow: 0 0 4px #4169E1;
+                opacity: 0.4;
             }
 
             to {
-                box-shadow: 0 0 15px #4169E1;
+                opacity: 1;
             }
         }
 
@@ -321,6 +332,14 @@
         .cortellect-navbar .nav-cta-btn:hover {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: scale(1.05);
+        }
+
+        /* Responsive adjustment for the CTA button between 1044.10px and 1080px */
+        @media (min-width: 1044.10px) and (max-width: 1080px) {
+            .cortellect-navbar .nav-cta-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.875rem;
+            }
         }
 
         /* ===== MOBILE MENU BUTTON ===== */
@@ -455,10 +474,8 @@
             transform: scale(1.05);
         }
 
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-
         /* Mobile: < 640px */
-        @media (max-width: 639px) {
+        @media (max-width:639px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -498,8 +515,8 @@
             }
         }
 
-        /* Tablet: 640px - 1023px */
-        @media (min-width: 640px) and (max-width: 1023px) {
+        /* Tablet/Mobile Transition: 640px - 1044.00px */
+        @media (min-width:640px) and (max-width:1044.00px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -514,12 +531,12 @@
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
-        /* Desktop: >= 1024px */
-        @media (min-width: 1024px) {
+        /* Desktop: >= 1044.10px */
+        @media (min-width:1044.10px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -533,16 +550,16 @@
             }
 
             .cortellect-navbar .nav-desktop-menu {
-                display: flex;
+                display: flex !important;
             }
 
             .cortellect-navbar .nav-mobile-toggle {
-                display: none;
+                display: none !important;
             }
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
@@ -566,6 +583,26 @@
         }
 
         /* End of cortellect Navbar */
+
+        /* Global Layout Overrides (Sync with index.html) */
+        .page-content-wrapper {
+            overflow: visible !important;
+            width: 100%;
+            height: auto !important;
+        }
+
+        section {
+            overflow: visible !important;
+            height: auto !important;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
         .bg-pattern {
             /* background-image: url('./assets/images/blog/crm-blog.webp'); */
@@ -622,11 +659,19 @@
                         Open for New Projects
                     </span>
                     <div class="nav-top-social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61585676462932" aria-label="Facebook"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/cortellect-technologies/" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/cortellect" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61585676462932"
+                            aria-label="Visit us on Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/cortellect-technologies/"
+                            aria-label="Visit us on LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://x.com/cortellect" aria-label="Visit us on X (Twitter)">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -701,7 +746,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="nav-mobile-toggle" id="navMobileToggle">
+                    <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle mobile menu">
                         <i class="fas fa-bars" id="navMobileIcon"></i>
                     </button>
                 </div>
@@ -1059,6 +1104,8 @@
                                 Subscribe
                             </button>
                         </div>
+                        <!-- Inline message div -->
+                        <div id="newsletterMessage" class="mt-2 text-sm hidden"></div>
                     </form>
                 </div>
             </div>
@@ -1228,10 +1275,8 @@
                         <a href="./legal/privacy-policy.html"
                             class="text-gray-400 hover:text-blue-500 transition">Privacy
                             Policy</a>
-
                         <a href="./legal/terms-and-conditions.html"
-                            class="text-gray-400 hover:text-blue-500 transition">Terms
-                            of
+                            class="text-gray-400 hover:text-blue-500 transition">Terms of
                             Service</a>
                         <a href="./legal/sitemap.html" class="text-gray-400 hover:text-blue-500 transition">Sitemap</a>
                         <a href="./legal/cookie-policy.html" class="text-gray-400 hover:text-blue-500 transition">Cookie

@@ -23,9 +23,15 @@
             scroll-behavior: smooth;
         }
 
+        /* ⚠️ CRITICAL: DO NOT use overflow-x: hidden on body!
+           It breaks position: sticky on child elements.
+           Instead, we use a wrapper or manage overflow differently */
         body {
-
-            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            /* Prevent horizontal scroll without breaking sticky */
+            max-width: 100vw;
+            position: relative;
         }
 
 
@@ -189,7 +195,18 @@
             padding: 0.75rem;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            animation: nav-pulse-glow 2s infinite alternate;
+            position: relative;
+        }
+
+        .cortellect-navbar .nav-logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px #4169E1;
+            opacity: 0;
+            z-index: -1;
+            animation: nav-pulse-opacity 2s infinite alternate;
         }
 
         .cortellect-navbar .nav-logo-icon i {
@@ -218,13 +235,13 @@
             font-weight: 600;
         }
 
-        @keyframes nav-pulse-glow {
+        @keyframes nav-pulse-opacity {
             from {
-                box-shadow: 0 0 4px #4169E1;
+                opacity: 0.4;
             }
 
             to {
-                box-shadow: 0 0 15px #4169E1;
+                opacity: 1;
             }
         }
 
@@ -323,6 +340,14 @@
         .cortellect-navbar .nav-cta-btn:hover {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: scale(1.05);
+        }
+
+        /* Responsive adjustment for the CTA button between 1044.10px and 1080px */
+        @media (min-width: 1044.10px) and (max-width: 1080px) {
+            .cortellect-navbar .nav-cta-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.875rem;
+            }
         }
 
         /* ===== MOBILE MENU BUTTON ===== */
@@ -500,8 +525,8 @@
             }
         }
 
-        /* Tablet: 640px - 1023px */
-        @media (min-width: 640px) and (max-width: 1023px) {
+        /* Tablet/Mobile Transition: 640px - 1044.00px */
+        @media (min-width:640px) and (max-width:1044.00px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -516,12 +541,12 @@
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
-        /* Desktop: >= 1024px */
-        @media (min-width: 1024px) {
+        /* Desktop: >= 1044.10px */
+        @media (min-width:1044.10px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -535,16 +560,16 @@
             }
 
             .cortellect-navbar .nav-desktop-menu {
-                display: flex;
+                display: flex !important;
             }
 
             .cortellect-navbar .nav-mobile-toggle {
-                display: none;
+                display: none !important;
             }
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
@@ -1911,7 +1936,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="nav-mobile-toggle" id="navMobileToggle">
+                    <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle mobile menu">
                         <i class="fas fa-bars" id="navMobileIcon"></i>
                     </button>
                 </div>

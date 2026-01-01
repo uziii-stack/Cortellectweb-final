@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Cortellect Technologies</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +37,7 @@
            ======================================== */
 
         /* Import font - only if not already loaded on host page */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); */
 
         /* ===== TOP BAR WRAPPER (NON-STICKY) ===== */
         .cortellect-top-bar {
@@ -189,7 +189,18 @@
             padding: 0.75rem;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            animation: nav-pulse-glow 2s infinite alternate;
+            position: relative;
+        }
+
+        .cortellect-navbar .nav-logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px #4169E1;
+            opacity: 0;
+            z-index: -1;
+            animation: nav-pulse-opacity 2s infinite alternate;
         }
 
         .cortellect-navbar .nav-logo-icon i {
@@ -218,13 +229,13 @@
             font-weight: 600;
         }
 
-        @keyframes nav-pulse-glow {
+        @keyframes nav-pulse-opacity {
             from {
-                box-shadow: 0 0 4px #4169E1;
+                opacity: 0.4;
             }
 
             to {
-                box-shadow: 0 0 15px #4169E1;
+                opacity: 1;
             }
         }
 
@@ -323,6 +334,14 @@
         .cortellect-navbar .nav-cta-btn:hover {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: scale(1.05);
+        }
+
+        /* Responsive adjustment for the CTA button between 1044.10px and 1080px */
+        @media (min-width: 1044.10px) and (max-width: 1080px) {
+            .cortellect-navbar .nav-cta-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.875rem;
+            }
         }
 
         /* ===== MOBILE MENU BUTTON ===== */
@@ -460,12 +479,12 @@
         /* ===== RESPONSIVE BREAKPOINTS ===== */
 
         /* Mobile: < 640px */
-        @media (max-width: 639px) {
+        @media (max-width:639px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
             }
 
             .cortellect-top-bar .nav-top-info,
@@ -479,8 +498,8 @@
             }
 
             .cortellect-navbar .nav-main-container {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
             }
 
             .cortellect-navbar .nav-main-content {
@@ -500,8 +519,8 @@
             }
         }
 
-        /* Tablet: 640px - 1023px */
-        @media (min-width: 640px) and (max-width: 1023px) {
+        /* Tablet/Mobile Transition: 640px - 1044.00px */
+        @media (min-width:640px) and (max-width:1044.00px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -516,12 +535,12 @@
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
-        /* Desktop: >= 1024px */
-        @media (min-width: 1024px) {
+        /* Desktop: >= 1044.10px */
+        @media (min-width:1044.10px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -535,16 +554,16 @@
             }
 
             .cortellect-navbar .nav-desktop-menu {
-                display: flex;
+                display: flex !important;
             }
 
             .cortellect-navbar .nav-mobile-toggle {
-                display: none;
+                display: none !important;
             }
 
             .cortellect-top-bar .nav-hide-mobile,
             .cortellect-navbar .nav-hide-mobile {
-                display: flex;
+                display: flex !important;
             }
         }
 
@@ -568,6 +587,26 @@
         }
 
         /* End of cortellect Navbar */
+
+        /* Global Layout Overrides (Sync with index.html) */
+        .page-content-wrapper {
+            overflow: visible !important;
+            width: 100%;
+            height: auto !important;
+        }
+
+        section {
+            overflow: visible !important;
+            height: auto !important;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
 
 
@@ -675,7 +714,7 @@
     </style>
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800">
     <!-- ========================================
          cortellect TOP INFO BAR - NON-STICKY
          This scrolls away when user scrolls down
@@ -699,11 +738,19 @@
                         Open for New Projects
                     </span>
                     <div class="nav-top-social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61585676462932" aria-label="Facebook"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/cortellect-technologies/" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/cortellect" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61585676462932"
+                            aria-label="Visit us on Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/cortellect-technologies/"
+                            aria-label="Visit us on LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://x.com/cortellect" aria-label="Visit us on X (Twitter)">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -778,7 +825,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="nav-mobile-toggle" id="navMobileToggle">
+                    <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle mobile menu">
                         <i class="fas fa-bars" id="navMobileIcon"></i>
                     </button>
                 </div>
@@ -1304,6 +1351,7 @@
                             </button>
                         </div>
                     </form>
+                    <div id="newsletterMessage" class="mt-4 text-center hidden font-medium"></div>
 
                 </div>
             </div>
@@ -1419,20 +1467,21 @@
                     <h4 class="text-white font-bold text-lg mb-4">Follow Us</h4>
                     <div class="flex space-x-3">
                         <a href="https://www.facebook.com/profile.php?id=61585676462932"
+                            aria-label="Follow us on Facebook"
                             class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
-                            <i class="fab fa-facebook text-xl"></i>
+                            <i class="fab fa-facebook text-xl" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/cortellect-technologies"
+                        <a href="https://www.linkedin.com/in/cortellect-technologies" aria-label="Follow us on LinkedIn"
                             class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
-                            <i class="fab fa-linkedin-in text-xl"></i>
+                            <i class="fab fa-linkedin-in text-xl" aria-hidden="true"></i>
                         </a>
-                        <a href="https://x.com/cortellect"
+                        <a href="https://x.com/cortellect" aria-label="Follow us on X (Twitter)"
                             class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
-                            <i class="fab fa-twitter text-xl"></i>
+                            <i class="fab fa-twitter text-xl" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/"
+                        <a href="https://www.instagram.com/" aria-label="Follow us on Instagram"
                             class="bg-gray-800 hover:bg-blue-600 rounded-lg p-3 transition">
-                            <i class="fab fa-instagram text-xl"></i>
+                            <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
