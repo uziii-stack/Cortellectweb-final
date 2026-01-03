@@ -10,7 +10,10 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blogs - Cortellect Technologies</title>
+    <title>Our Blogs - Cortellect Technologies | Expert Tech Insights & Trends</title>
+    <meta name="description"
+        content="Explore the Cortellect Technologies blog for the latest insights on software development, AI automation, enterprise CRM, and digital transformation trends.">
+    <link rel="canonical" href="https://cortellect.com/blogs.html">
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -658,6 +661,53 @@
             transform: translateY(-5px);
         }
     </style>
+    <!-- SEO Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://cortellect.com/blogs.html#webpage",
+          "url": "https://cortellect.com/blogs.html",
+          "name": "Our Blogs - Cortellect Technologies",
+          "description": "Expert insights, technology trends, and real-world solutions from the Cortellect Technologies team.",
+          "breadcrumb": { "@id": "https://cortellect.com/blogs.html#breadcrumb" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cortellect.com/blogs.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://cortellect.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blogs",
+              "item": "https://cortellect.com/blogs.html"
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Cortellect Technologies",
+          "url": "https://cortellect.com/",
+          "logo": "https://cortellect.com/assets/icons/favicon/apple-touch-icon.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+92 321 8283392",
+            "contactType": "customer service",
+            "areaServed": ["Worldwide", "PK", "US", "UK", "AE"],
+            "availableLanguage": "English"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
@@ -848,7 +898,7 @@
                     class="text-lg sm:text-xl text-gray-200 font-medium bg-white/10 inline-block px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
                     <a href="./index.html" class="hover:text-blue-400">Home</a>
                     <span class="mx-2 text-blue-400">></span>
-                    <a href="blog.html" class="hover:text-blue-400">Blogs</a>
+                    <a href="blogs.html" class="hover:text-blue-400">Blogs</a>
                 </p>
             </div>
 
@@ -888,7 +938,9 @@
                             enhance overall organizational productivity.
                         </p>
                         <p class="text-gray-400 text-xs mb-2">Jul 22, 2024</p>
-                        <a href="./blogs/blog-crm.html" class="text-blue-600 hover:underline">Read More →</a>
+                        <a href="./blogs/blog-crm.html" class="text-blue-600 hover:underline"
+                            aria-label="Read more about How Enterprise CRM Transforms Business Efficiency">Read More
+                            →</a>
                     </div>
                 </div>
 
@@ -902,7 +954,8 @@
                             businesses with intelligent decision-making.
                         </p>
                         <p class="text-gray-400 text-xs mb-2">Aug 10, 2024</p>
-                        <a href="./blogs/blog-ai.html" class="text-blue-600 hover:underline">Read More →</a>
+                        <a href="./blogs/blog-ai.html" class="text-blue-600 hover:underline"
+                            aria-label="Read more about AI Integration: The Future of Smart Automation">Read More →</a>
                     </div>
                 </div>
 
@@ -916,7 +969,8 @@
                             and future-ready web applications.
                         </p>
                         <p class="text-gray-400 text-xs mb-2">Sep 02, 2024</p>
-                        <a href="./blogs/blog-web-app.html" class="text-blue-600 hover:underline">Read More →</a>
+                        <a href="./blogs/blog-web-app.html" class="text-blue-600 hover:underline"
+                            aria-label="Read more about Building Scalable Web Applications in 2025">Read More →</a>
                     </div>
                 </div>
             </div>

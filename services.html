@@ -10,7 +10,10 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Cortellect Technologies</title>
+    <title>Services - Cortellect Technologies | Expert Software Development</title>
+    <meta name="description"
+        content="Cortellect Technologies offers professional software services including Enterprise CRM, EMS, Web & Mobile Apps, AI automation, and UI/UX design to scale your business.">
+    <link rel="canonical" href="https://cortellect.com/services.html">
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -637,6 +640,100 @@
             gap: 2.5rem !important;
         }
     </style>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cortellect.com/#organization",
+          "name": "Cortellect Technologies",
+          "url": "https://cortellect.com/",
+          "logo": "https://cortellect.com/assets/icons/favicon/apple-touch-icon.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+92 321 8283392",
+            "contactType": "customer service",
+            "areaServed": ["Worldwide", "PK", "US", "UK", "AE"],
+            "availableLanguage": "English"
+          },
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61585676462932",
+            "https://www.linkedin.com/in/cortellect-technologies/",
+            "https://x.com/cortellect"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cortellect.com/services.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://cortellect.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://cortellect.com/services.html"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Software Development Services",
+          "provider": { "@id": "https://cortellect.com/#organization" },
+          "areaServed": "Worldwide",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Cortellect Services",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Service",
+                  "name": "Enterprise EMS",
+                  "url": "https://cortellect.com/services/erp-enterprise.html"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Service",
+                  "name": "Enterprise CRM Development",
+                  "url": "https://cortellect.com/services/enterprise-crm-development.html"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Service",
+                  "name": "Custom Web Applications",
+                  "url": "https://cortellect.com/services/custom-web-application.html"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "Service",
+                  "name": "AI Integration & Automation",
+                  "url": "https://cortellect.com/services/ai-integration-automation.html"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 
@@ -886,6 +983,8 @@
     </style>
 
     <section class="w-11/12 max-w-6xl mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Comprehensive Software Solutions for Modern
+            Businesses</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
             <!-- Card 1: Enterprise EMS -->
@@ -904,7 +1003,8 @@
                         custom enterprise solutions tailored to your business needs.
                     </p>
                     <a href="./services/erp-enterprise.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about Enterprise EMS Services">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -925,7 +1025,8 @@
                         more to streamline your business operations.
                     </p>
                     <a href="./services/enterprise-crm-development.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about Enterprise CRM Development">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -946,7 +1047,8 @@
                         custom web applications tailored to your requirements.
                     </p>
                     <a href="./services/custom-web-application.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about Custom Web Applications">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -967,7 +1069,8 @@
                         cross-platform solutions.
                     </p>
                     <a href="./services/mobile-app-development.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about Mobile Application Development">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -988,7 +1091,8 @@
                         interfaces and exceptional user experiences.
                     </p>
                     <a href="./services/ui-ux-design.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about UI/UX Design Services">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -1009,7 +1113,8 @@
                         intelligent automation solutions.
                     </p>
                     <a href="./services/ai-integration-automation.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about AI Integration & Automation">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -1030,7 +1135,8 @@
                         their business websites and blogs.
                     </p>
                     <a href="./services/wordpress-websites.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about WordPress Website Development">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -1051,7 +1157,8 @@
                         consulting to help companies leverage technology.
                     </p>
                     <a href="./services/tech-consultancy.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400">
+                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
+                        aria-label="Read more about Tech Consultancy Services">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
