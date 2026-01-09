@@ -13,5 +13,6 @@ Disallow: /newsletter.js
 
 # Allow favicon icons
 Allow: /assets/icons/favicon/
+Allow: /assets/
 
 Sitemap: https://www.cortellect.com/sitemap.xml
