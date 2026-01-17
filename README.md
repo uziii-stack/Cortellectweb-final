@@ -23,16 +23,16 @@ A professional, fully responsive website for Cortellect - delivering enterprise-
 
 ## 🚀 Live Demo
 
-Visit the live site: [Cortellect Website](https://ghufranNaseer.github.io/Cortellect/)
+Visit the live site: [Cortellect Website](https://cortellect.com)
 
 ## 📦 Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/GhufranNaseer/Cortellect.git
+git clone https://github.com/uziii-stack/Cortellectweb-final.git
 
 # Navigate to project directory
-cd Cortellect
+cd Cortellectweb-final
 
 # Install dependencies (if needed)
 npm install
@@ -89,11 +89,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - **Email**: info@cortellect.com
 - **Location**: Karachi, Pakistan
-- **Website**: [cortellect.com](https://ghufranNaseer.github.io/Cortellect/)
+- **Website**: [cortellect.com](https://cortellect.com)
 
 ## 📝 License
 
-© 2024 Cortellect. All rights reserved.
+© 2024 Cortellect Technologies. All rights reserved.
 
 ---
 
