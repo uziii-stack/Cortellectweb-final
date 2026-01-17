@@ -1,4 +1,4 @@
-// 🔥 Inject CSS dynamically (animations + toast styles)
+// Inject CSS dynamically (animations + toast styles)
 (function injectContactFormCSS() {
   if (document.getElementById("contact-form-css")) return;
 
@@ -64,7 +64,7 @@
   document.head.appendChild(style);
 })();
 
-// 🔥 Toast helper
+//  Toast helper
 function showContactFormToast(message, type = "success", duration = 3000) {
   let container = document.getElementById("contactFormToastContainer");
   if (!container) {
@@ -86,9 +86,9 @@ function showContactFormToast(message, type = "success", duration = 3000) {
   }, duration);
 }
 
-// 🔥 Contact form logic
+// Contact form logic
 document.addEventListener("DOMContentLoaded", () => {
-  // 🚨 NEW ACCOUNT PUBLIC KEY
+  // NEW ACCOUNT PUBLIC KEY
   emailjs.init("7rkpnkxj9FdqjXuZx");
 
   const forms = document.querySelectorAll("form[id='contactForm']");
