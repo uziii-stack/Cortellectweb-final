@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,37 +8,38 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/icons/favicon/site.webmanifest">
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Cortellect Technologies | Expert Software Development</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Cortellect Technologies</title>
     <meta name="description"
-        content="Cortellect Technologies offers professional software services including Enterprise CRM, EMS, Web & Mobile Apps, AI automation, and UI/UX design to scale your business.">
+        content="The page you're looking for doesn't exist. Explore Cortellect Technologies' services and solutions.">
+    <meta name="robots" content="noindex, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cortellect.com/services.html">
-    <meta property="og:title" content="Services - Cortellect Technologies | Expert Software Development">
+    <meta property="og:url" content="https://www.cortellect.com/404.html">
+    <meta property="og:title" content="404 - Page Not Found | Cortellect Technologies">
     <meta property="og:description"
-        content="Cortellect Technologies offers professional software services including Enterprise CRM, EMS, Web & Mobile Apps, AI automation, and UI/UX design.">
+        content="The page you're looking for doesn't exist. Explore Cortellect Technologies' services and solutions.">
     <meta property="og:image" content="https://www.cortellect.com/assets/images/logo.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.cortellect.com/services.html">
-    <meta name="twitter:title" content="Services - Cortellect Technologies | Expert Software Development">
+    <meta name="twitter:url" content="https://www.cortellect.com/404.html">
+    <meta name="twitter:title" content="404 - Page Not Found | Cortellect Technologies">
     <meta name="twitter:description"
-        content="Cortellect Technologies offers professional software services including Enterprise CRM, EMS, Web & Mobile Apps, AI automation, and UI/UX design.">
+        content="The page you're looking for doesn't exist. Explore Cortellect Technologies' services and solutions.">
     <meta name="twitter:image" content="https://www.cortellect.com/assets/images/logo.png">
 
-    <link rel="canonical" href="https://cortellect.com/services.html">
     <!-- Google Analytics -->
     <script src="analytics.js"></script>
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
 
@@ -51,19 +52,16 @@
         }
 
         body {
-
+            margin: 0;
+            padding: 0;
+            max-width: 100vw;
+            position: relative;
             overflow-x: hidden;
         }
 
         /* ========================================
-           cortellect NAVBAR - REUSABLE COMPONENT
-           Separated into two sections:
-           1. .cortellect-top-bar (non-sticky info bar)
-           2. .cortellect-navbar (sticky main navigation)
+           CORTELLECT NAVBAR - REUSABLE COMPONENT
            ======================================== */
-
-        /* Import font - only if not already loaded on host page */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
         /* ===== TOP BAR WRAPPER (NON-STICKY) ===== */
         .cortellect-top-bar {
@@ -79,11 +77,9 @@
         }
 
         /* ===== MAIN NAVBAR WRAPPER (STICKY) ===== */
-        /* 🔴 CRITICAL: Only the main navbar is sticky, not the top bar */
         .cortellect-navbar {
             font-family: 'Inter', sans-serif;
             box-sizing: border-box;
-            /* Make ONLY the main navbar sticky */
             position: -webkit-sticky !important;
             position: sticky !important;
             top: 0 !important;
@@ -91,7 +87,6 @@
             background: white;
         }
 
-        /* Ensure all children use border-box */
         .cortellect-navbar *,
         .cortellect-navbar *::before,
         .cortellect-navbar *::after {
@@ -99,7 +94,6 @@
         }
 
         /* ===== TOP BAR STYLES ===== */
-        /* Updated selector to work with new .cortellect-top-bar wrapper */
         .cortellect-top-bar .nav-top-bar,
         .cortellect-navbar .nav-top-bar {
             background-color: #4169E1;
@@ -173,10 +167,8 @@
         }
 
         /* ===== MAIN NAVBAR STYLES ===== */
-        /* Note: Sticky positioning is now on parent .cortellect-navbar */
         .cortellect-navbar .nav-main {
             position: relative;
-            /* No longer sticky, parent handles it */
             z-index: 1;
             background: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -362,7 +354,6 @@
             transform: scale(1.05);
         }
 
-        /* Responsive adjustment for the CTA button between 1044.10px and 1080px */
         @media (min-width: 1044.10px) and (max-width: 1080px) {
             .cortellect-navbar .nav-cta-btn {
                 padding: 0.6rem 0.8rem;
@@ -405,7 +396,6 @@
             display: block;
         }
 
-        /* Custom scrollbar for mobile menu */
         .cortellect-navbar .nav-mobile-menu::-webkit-scrollbar {
             width: 6px;
         }
@@ -502,8 +492,8 @@
             transform: scale(1.05);
         }
 
-        /* Mobile: < 640px */
-        @media (max-width:639px) {
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 639px) {
 
             .cortellect-top-bar .nav-top-bar-container,
             .cortellect-navbar .nav-top-bar-container {
@@ -543,7 +533,6 @@
             }
         }
 
-        /* Tablet/Mobile Transition: 640px - 1044.00px */
         @media (min-width:640px) and (max-width:1044.00px) {
 
             .cortellect-top-bar .nav-top-bar-container,
@@ -563,7 +552,6 @@
             }
         }
 
-        /* Desktop: >= 1044.10px */
         @media (min-width:1044.10px) {
 
             .cortellect-top-bar .nav-top-bar-container,
@@ -591,7 +579,6 @@
             }
         }
 
-        /* Large screens: >= 1536px */
         @media (min-width: 1536px) {
 
             .cortellect-top-bar .nav-top-bar-container,
@@ -601,7 +588,6 @@
             }
         }
 
-        /* Reduced motion preference */
         @media (prefers-reduced-motion: reduce) {
             .cortellect-navbar * {
                 animation-duration: 0.01ms !important;
@@ -610,38 +596,198 @@
             }
         }
 
-        /* End of cortellect Navbar */
+        /* ========================================
+           404 PAGE SPECIFIC STYLES
+           ======================================== */
 
-        /* Global Layout Overrides (Sync with index.html) */
-        .page-content-wrapper {
-            overflow: visible !important;
-            width: 100%;
-            height: auto !important;
+        .error-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem 1rem;
         }
 
-        section {
-            overflow: visible !important;
-            height: auto !important;
+        .error-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        .container {
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
+        .error-code {
+            font-size: 10rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4169E1 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .bg-pattern {
-            /* background-image: url('./assets/images/blog/crm-blog.webp'); */
-            background-color: #1f2937;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            overflow: hidden;
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .error-description {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background-color: #4169E1;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(65, 105, 225, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #3557c5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(65, 105, 225, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #4169E1;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            border: 2px solid #4169E1;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .popular-links {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .popular-links h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-card {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .link-card:hover {
+            background: #f9fafb;
+            border-color: #4169E1;
+            transform: translateY(-2px);
+        }
+
+        .link-card i {
+            color: #4169E1;
+            font-size: 1.25rem;
+        }
+
+        .link-card-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .link-card-title {
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 0.95rem;
+        }
+
+        .link-card-desc {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 1.75rem;
+            }
+
+            .error-description {
+                font-size: 1rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll to top button */
         .scroll-to-top {
             position: fixed;
             bottom: 30px;
@@ -653,114 +799,12 @@
         .scroll-to-top:hover {
             transform: translateY(-5px);
         }
-
-        /* Footer Stacking */
-        footer .grid {
-            gap: 2.5rem !important;
-        }
     </style>
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://cortellect.com/#organization",
-          "name": "Cortellect Technologies",
-          "url": "https://cortellect.com/",
-          "logo": "https://cortellect.com/assets/icons/favicon/apple-touch-icon.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+92 321 8283392",
-            "contactType": "customer service",
-            "areaServed": ["Worldwide", "PK", "US", "UK", "AE"],
-            "availableLanguage": "English"
-          },
-          "sameAs": [
-            "https://www.facebook.com/profile.php?id=61585676462932",
-            "https://www.linkedin.com/in/cortellect-technologies/",
-            "https://x.com/cortellect"
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://cortellect.com/services.html#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://cortellect.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Services",
-              "item": "https://cortellect.com/services.html"
-            }
-          ]
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Software Development Services",
-          "provider": { "@id": "https://cortellect.com/#organization" },
-          "areaServed": "Worldwide",
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Cortellect Services",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                  "@type": "Service",
-                  "name": "Enterprise EMS",
-                  "url": "https://cortellect.com/services/erp-enterprise.html"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                  "@type": "Service",
-                  "name": "Enterprise CRM Development",
-                  "url": "https://cortellect.com/services/enterprise-crm-development.html"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                  "@type": "Service",
-                  "name": "Custom Web Applications",
-                  "url": "https://cortellect.com/services/custom-web-application.html"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "item": {
-                  "@type": "Service",
-                  "name": "AI Integration & Automation",
-                  "url": "https://cortellect.com/services/ai-integration-automation.html"
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-    </script>
 </head>
 
-
-
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100">
     <!-- ========================================
-         cortellect TOP INFO BAR - NON-STICKY
-         This scrolls away when user scrolls down
+         CORTELLECT TOP INFO BAR
          ======================================== -->
     <div class="cortellect-top-bar">
         <div class="nav-top-bar">
@@ -785,12 +829,10 @@
                             aria-label="Visit us on Facebook">
                             <i class="fab fa-facebook" aria-hidden="true"></i>
                         </a>
-
                         <a href="https://www.linkedin.com/in/cortellect-technologies/"
                             aria-label="Visit us on LinkedIn">
                             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-
                         <a href="https://x.com/cortellect" aria-label="Visit us on X (Twitter)">
                             <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
@@ -799,14 +841,11 @@
             </div>
         </div>
     </div>
-    <!-- End of Top Info Bar -->
 
     <!-- ========================================
-         cortellect MAIN NAVBAR - STICKY
-         This sticks to the top when scrolling
+         CORTELLECT MAIN NAVBAR
          ======================================== -->
     <div class="cortellect-navbar">
-        <!-- Main Navbar -->
         <nav class="nav-main">
             <div class="nav-main-container">
                 <div class="nav-main-content">
@@ -859,8 +898,8 @@
                         </div>
 
                         <a href="./industries.html" class="nav-menu-link">Industries</a>
-                        <a href="index.html#projects" class="nav-menu-link">Portfolio</a>
-                        <a href="index.html#testimonials" class="nav-menu-link">Reviews</a>
+                        <a href="./index.html#projects" class="nav-menu-link">Portfolio</a>
+                        <a href="./index.html#testimonials" class="nav-menu-link">Reviews</a>
                         <a href="./about.html" class="nav-menu-link">About</a>
                         <a href="./blogs.html" class="nav-menu-link">Blogs</a>
 
@@ -884,11 +923,13 @@
                             <i class="fas fa-chevron-right nav-mobile-dropdown-arrow" id="navMobileDropdownArrow"></i>
                         </div>
                         <div class="nav-mobile-dropdown-content" id="navMobileDropdownContent">
-                            <a href="./services/erp-enterprise.html" class="nav-mobile-dropdown-item">Enterprise EMS</a>
+                            <a href="./services/erp-enterprise.html" class="nav-mobile-dropdown-item">Enterprise
+                                EMS</a>
                             <a href="./services/enterprise-crm-development.html"
                                 class="nav-mobile-dropdown-item">Enterprise CRM
                                 Development</a>
-                            <a href="./services/custom-web-application.html" class="nav-mobile-dropdown-item">Custom Web
+                            <a href="./services/custom-web-application.html" class="nav-mobile-dropdown-item">Custom
+                                Web
                                 Applications</a>
                             <a href="./services/mobile-app-development.html" class="nav-mobile-dropdown-item">Mobile
                                 Application
@@ -905,8 +946,8 @@
                     </div>
 
                     <a href="./industries.html" class="nav-mobile-link">Industries</a>
-                    <a href="index.html#projects" class="nav-mobile-link">Portfolio</a>
-                    <a href="index.html#testimonials" class="nav-mobile-link">Reviews</a>
+                    <a href="./index.html#projects" class="nav-mobile-link">Portfolio</a>
+                    <a href="./index.html#testimonials" class="nav-mobile-link">Reviews</a>
                     <a href="./about.html" class="nav-mobile-link">About</a>
                     <a href="./blogs.html" class="nav-mobile-link">Blogs</a>
 
@@ -915,303 +956,93 @@
             </div>
         </nav>
     </div>
-    <!-- End of cortellect Navbar -->
 
-    <!-- ======================================================
-                     PAGE HEADER
-    ======================================================= -->
-    <section class="bg-pattern text-white relative py-24 overflow-hidden">
+    <!-- ========================================
+         404 ERROR SECTION
+         ======================================== -->
+    <section class="error-section">
+        <div class="error-container">
+            <!-- 404 Error Code -->
+            <div class="error-code">404</div>
 
-        <!-- Decorative Images (Optional - can be customized or removed) -->
-        <!-- <img src="./assets/images/about/hero-gif.gif" class="absolute top-20 left-10 w-32 lg:w-40"
-            alt="Decorative graphic">
-        <img src="./assets/images/about/hero-gif.gif" class="absolute bottom-10 right-20 w-40 lg:w-52"
-            alt="Decorative graphic"> -->
+            <!-- Error Message -->
+            <h1 class="error-title">Oops! Page Not Found</h1>
+            <p class="error-description">
+                The page you're looking for seems to have wandered off into the digital void.
+                Don't worry though we've got plenty of other great content to explore!
+            </p>
 
-        <!-- Blur Overlays for Visual Depth -->
-        <div class="absolute top-40 right-40 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-
-        <!-- Main Content Container -->
-        <div class="container mx-auto text-center relative z-10 px-4">
-
-            <!-- Page Title -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
-                Our <span class="text-blue-600">Services</span>
-            </h1>
-
-            <!-- Breadcrumb Navigation -->
-            <div class="flex justify-center items-center gap-2 text-base lg:text-lg mb-8">
-                <p
-                    class="text-lg sm:text-xl text-gray-200 font-medium bg-white/10 inline-block px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
-                    <a href="./index.html" class="hover:text-blue-400">Home</a>
-                    <span class="mx-2 text-blue-400">></span>
-                    <a href="./services.html" class="hover:text-blue-400">Services</a>
-                </p>
+            <!-- Primary Actions -->
+            <div class="error-actions">
+                <a href="./index.html" class="btn-primary">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+                <a href="./contact.html" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Contact Support
+                </a>
             </div>
 
-            <!-- Page Description -->
-            <p class="mt-8 max-w-4xl mx-auto text-base lg:text-lg leading-relaxed text-gray-200 px-4">
-                Cortellect Technologies is your trusted partner for modern digital services. We deliver intelligent,
-                user-focused solutions that streamline operations, enhance customer experience, and leverage automation
-                and next-gen technologies. </p>
-        </div>
-    </section>
-
-    <!-- ======================================================
-                   SERVICES SECTION - CARD GRID
-    ======================================================= -->
-    <style>
-        /* Card hover overlay animation */
-        .service-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #4169E1;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 0;
-        }
-
-        .service-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .service-card>div {
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-title {
-            color: #4169E1;
-            transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card:hover .card-title {
-            color: white !important;
-        }
-    </style>
-
-    <section class="w-11/12 max-w-6xl mx-auto py-16">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Comprehensive Software Solutions for Modern
-            Businesses</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-
-            <!-- Card 1: Enterprise EMS -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        Enterprise EMS
-
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        Our customers and industry need more than just out-of-the-box software systems. We deliver
-                        custom enterprise solutions tailored to your business needs.
-                    </p>
-                    <a href="./services/erp-enterprise.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about Enterprise EMS Services">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
+            <!-- Popular Links -->
+            <div class="popular-links">
+                <h3>Popular Pages</h3>
+                <div class="links-grid">
+                    <a href="./services.html" class="link-card">
+                        <i class="fas fa-briefcase"></i>
+                        <div class="link-card-text">
+                            <span class="link-card-title">Our Services</span>
+                            <span class="link-card-desc">Explore our solutions</span>
+                        </div>
                     </a>
-                </div>
-            </div>
 
-            <!-- Card 2: Enterprise CRM Development -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        Enterprise CRM Development
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        We offer complete integration solutions with ERP systems including Dynamics, SAP, Oracle, and
-                        more to streamline your business operations.
-                    </p>
-                    <a href="./services/enterprise-crm-development.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about Enterprise CRM Development">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="./about.html" class="link-card">
+                        <i class="fas fa-info-circle"></i>
+                        <div class="link-card-text">
+                            <span class="link-card-title">About Us</span>
+                            <span class="link-card-desc">Learn our story</span>
+                        </div>
                     </a>
-                </div>
-            </div>
 
-            <!-- Card 3: Custom Web Applications -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        Custom Web Applications
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        We specialize in complete product development — design, engineering, QA, and deployment of
-                        custom web applications tailored to your requirements.
-                    </p>
-                    <a href="./services/custom-web-application.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about Custom Web Applications">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 4: Mobile Application Development -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        Mobile Application Development
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        We build dynamic, secure and performance-driven mobile applications for iOS, Android, and
-                        cross-platform solutions.
-                    </p>
-                    <a href="./services/mobile-app-development.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about Mobile Application Development">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 5: UI/UX -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        UI/UX
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        From eCommerce to enterprise portals, we create modern, scalable apps with stunning user
-                        interfaces and exceptional user experiences.
-                    </p>
-                    <a href="./services/ui-ux-design.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about UI/UX Design Services">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 6: AI Integration & Automation -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
+                    <a href="./services/ai-integration-automation.html" class="link-card">
                         <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        AI Integration & Automation
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        We analyze and automate business processes using consultative procedures, AI integration, and
-                        intelligent automation solutions.
-                    </p>
-                    <a href="./services/ai-integration-automation.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about AI Integration & Automation">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                        <div class="link-card-text">
+                            <span class="link-card-title">AI Solutions</span>
+                            <span class="link-card-desc">Automation & AI</span>
+                        </div>
                     </a>
-                </div>
-            </div>
 
-            <!-- Card 7: WordPress Websites -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
+                    <a href="./services/enterprise-crm-development.html" class="link-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="link-card-text">
+                            <span class="link-card-title">Enterprise CRM</span>
+                            <span class="link-card-desc">Business solutions</span>
+                        </div>
+                    </a>
+
+                    <a href="./services/custom-web-application.html" class="link-card">
+                        <i class="fas fa-code"></i>
+                        <div class="link-card-text">
+                            <span class="link-card-title">Custom Web Apps</span>
+                            <span class="link-card-desc">Tailored solutions</span>
+                        </div>
+                    </a>
+
+                    <a href="./services/wordpress-websites.html" class="link-card">
                         <i class="fab fa-wordpress"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        WordPress Websites
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        We provide expert WordPress development to help companies leverage this powerful platform for
-                        their business websites and blogs.
-                    </p>
-                    <a href="./services/wordpress-websites.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about WordPress Website Development">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                        <div class="link-card-text">
+                            <span class="link-card-title">WordPress Sites</span>
+                            <span class="link-card-desc">CMS development</span>
+                        </div>
                     </a>
                 </div>
             </div>
-
-            <!-- Card 8: Tech Consultancy -->
-            <div class="service-card bg-white rounded-lg shadow-md border-t-4 transition-all duration-300 group"
-                style="border-top-color: #4169E1;">
-                <div class="p-8">
-                    <div class="text-5xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-400">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="card-title text-xl font-bold mb-4">
-                        Tech Consultancy
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-white transition-colors duration-400">
-                        We form long-term technology partnerships for joint ventures and alliances, providing expert IT
-                        consulting to help companies leverage technology.
-                    </p>
-                    <a href="./services/tech-consultancy.html"
-                        class="inline-flex items-center text-gray-800 font-semibold group-hover:text-white transition-colors duration-400"
-                        aria-label="Read more about Tech Consultancy Services">
-                        Read More <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
         </div>
     </section>
 
-
-
-    <!-- ======================================================
-                           CTA SECTION
-    ======================================================= -->
-    <section class="w-full flex justify-center my-12 lg:my-20">
-        <div
-            class="bg-gradient-to-br from-[#1b2141] to-[#0e1224] text-white p-6 sm:p-8 lg:p-10 rounded-3xl w-11/12 max-w-3xl text-center shadow-xl">
-            <h2 class="text-2xl font-semibold mb-2">Ready to Join Cortellect Technologies?</h2>
-            <p class="opacity-80 mb-6">Don’t miss your chance to be part of the future.</p>
-
-            <a href="./contact.html"
-                class="relative px-6 py-3 rounded-xl bg-[#4169E1] hover:bg-[#27408B] text-white font-semibold transition
-                  after:content-[''] after:absolute after:-inset-0.5 after:rounded-xl after:shadow-[0_0_20px_rgba(255,255,255,0.4)] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:pointer-events-none">
-                Build Your Future with Cortellect
-            </a>
-        </div>
-    </section>
-
-
-    <!-- ========== FOOTER ========== -->
-
-
-
-
-
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
     <footer class="bg-gray-900 text-gray-300 py-12 md:py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
@@ -1236,8 +1067,6 @@
                                 Subscribe
                             </button>
                         </div>
-                        <!-- Inline message div -->
-                        <div id="newsletterMessage" class="mt-2 text-sm hidden"></div>
                     </form>
                 </div>
             </div>
@@ -1303,9 +1132,9 @@
                             </a></li>
                         <li><a href="./about.html" class="text-gray-400 hover:text-blue-500 transition text-sm">About
                                 Us</a></li>
-                        <li><a href="index.html#projects"
+                        <li><a href="./index.html#projects"
                                 class="text-gray-400 hover:text-blue-500 transition text-sm">Portfolio</a></li>
-                        <li><a href="index.html#testimonials"
+                        <li><a href="./index.html#testimonials"
                                 class="text-gray-400 hover:text-blue-500 transition text-sm">Testimonials</a></li>
                         <li>
 
@@ -1339,15 +1168,17 @@
                         </p>
                         <p class="text-gray-400 text-sm flex items-center">
                             <i class="fas fa-phone mr-2 text-blue-500"></i>
-                            <a href="tel:92 321 8283392" class="hover:text-blue-500 transition">
+                            <a href="tel:+923218283392" class="hover:text-blue-500 transition">
                                 +92 321 8283392
                                 <i class="fas fa-external-link-alt ml-1 text-blue-500"></i>
                             </a>
+
                         </p>
                         <p class="text-gray-400 text-sm flex items-center gap-2">
                             <i class="fas fa-map-marker-alt text-blue-500"></i>
                             Karachi, Sindh, Pakistan
                         </p>
+
                     </div>
 
                     <h4 class="text-white font-bold text-lg mb-4">Follow Us</h4>
@@ -1396,7 +1227,6 @@
 
                 </div>
             </div>
-
             <!-- Bottom Bar -->
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -1408,7 +1238,8 @@
                             class="text-gray-400 hover:text-blue-500 transition">Privacy
                             Policy</a>
                         <a href="./legal/terms-and-conditions.html"
-                            class="text-gray-400 hover:text-blue-500 transition">Terms of
+                            class="text-gray-400 hover:text-blue-500 transition">Terms
+                            of
                             Service</a>
                         <a href="./legal/sitemap.html" class="text-gray-400 hover:text-blue-500 transition">Sitemap</a>
                         <a href="./legal/cookie-policy.html" class="text-gray-400 hover:text-blue-500 transition">Cookie
@@ -1426,111 +1257,38 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- JavaScript for Navigation -->
     <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('navMobileToggle');
+        const mobileMenu = document.getElementById('navMobileMenu');
 
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
 
+        // Mobile services dropdown
+        const mobileServicesToggle = document.getElementById('navMobileDropdownTrigger');
+        const mobileServicesContent = document.getElementById('navMobileDropdownContent');
+        const mobileServicesArrow = document.getElementById('navMobileDropdownArrow');
 
+        mobileServicesToggle.addEventListener('click', (e) => {
+            // Don't toggle if clicking the link itself
+            if (e.target.tagName === 'A') return;
 
-        //navbar script
-        (function () {
-            'use strict';
+            mobileServicesContent.classList.toggle('active');
+            mobileServicesArrow.classList.toggle('rotated');
+        });
 
-            // Mobile Menu Toggle
-            const mobileToggle = document.getElementById('navMobileToggle');
-            const mobileMenu = document.getElementById('navMobileMenu');
-            const mobileIcon = document.getElementById('navMobileIcon');
-
-            if (mobileToggle && mobileMenu && mobileIcon) {
-                mobileToggle.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('active');
-                    mobileToggle.classList.toggle('active');
-
-                    if (mobileMenu.classList.contains('active')) {
-                        mobileIcon.classList.remove('fa-bars');
-                        mobileIcon.classList.add('fa-times');
-                    } else {
-                        mobileIcon.classList.remove('fa-times');
-                        mobileIcon.classList.add('fa-bars');
-                    }
-                });
+        // Navbar scroll effect
+        const navbar = document.querySelector('.nav-main');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
             }
-
-            // Mobile Dropdown Toggle
-            const dropdownTrigger = document.getElementById('navMobileDropdownTrigger');
-            const dropdownContent = document.getElementById('navMobileDropdownContent');
-            const dropdownArrow = document.getElementById('navMobileDropdownArrow');
-
-            if (dropdownTrigger && dropdownContent && dropdownArrow) {
-                dropdownTrigger.addEventListener('click', function (e) {
-                    // Don't toggle if clicking the link itself
-                    if (e.target.tagName === 'A') return;
-
-                    dropdownContent.classList.toggle('active');
-                    dropdownArrow.classList.toggle('rotated');
-                });
-            }
-
-            // Navbar Scroll Effect
-            const navbar = document.querySelector('.cortellect-navbar .nav-main');
-            if (navbar) {
-                let lastScroll = 0;
-                window.addEventListener('scroll', function () {
-                    const currentScroll = window.pageYOffset;
-
-                    if (currentScroll > 100) {
-                        navbar.classList.add('nav-scrolled');
-                    } else {
-                        navbar.classList.remove('nav-scrolled');
-                    }
-
-                    lastScroll = currentScroll;
-                });
-            }
-
-            // Smooth Scroll for Anchor Links (within navbar only)
-            const navLinks = document.querySelectorAll('.cortellect-navbar a[href^="#"]');
-            navLinks.forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href.length > 1) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-
-                            // Close mobile menu if open
-                            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                                mobileMenu.classList.remove('active');
-                                mobileToggle.classList.remove('active');
-                                mobileIcon.classList.remove('fa-times');
-                                mobileIcon.classList.add('fa-bars');
-                            }
-                        }
-                    }
-                });
-            });
-        })();
-        //navbar script end
-
-
-        // Smooth Scroll for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href.length > 1) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
         });
 
         // Show/hide scroll to top button
@@ -1544,22 +1302,6 @@
                 scrollBtn.style.pointerEvents = 'none';
             }
         });
-
-
-        // ========== Fade In On Scroll ==========
-        const elements = document.querySelectorAll("section");
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("opacity-100", "translate-y-0");
-                }
-            });
-        }, { threshold: 0.1 });
-
-        elements.forEach(el => {
-            el.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-500");
-            observer.observe(el);
-        }); 
     </script>
 
     <!-- EmailJS library -->
@@ -1571,8 +1313,7 @@
     </script>
 
     <!-- Newsletter JS (external, one time file) -->
-    <script src="newsletter.js"></script>
-
+    <script src="./newsletter.js"></script>
 </body>
 
 </html>
