@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "service_ncqlhkl",      // Service ID
             "template_jp2uvoa",     // Template ID
             form,                   // Form element
-            "Vm6ZSdzYEzOUn0Gtw"     // Public Key
+            "xIeEqNe03-Y-4l1Bf"     // Public Key
         ).then(
             () => {
                 messageDiv.textContent = "Subscribed successfully!";
